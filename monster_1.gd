@@ -7,5 +7,5 @@ func _physics_process(delta):
 	if is_on_wall():
 		direction = direction * -1
 		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
-	position.x += speed * delta
+	position.x += speed * delta * direction
 	move_and_slide()

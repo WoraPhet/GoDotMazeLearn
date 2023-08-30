@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj5ppe25tbd6k"]
+[gd_scene load_steps=16 format=3 uid="uid://dj5ppe25tbd6k"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_h1fm5"]
 [ext_resource type="TileSet" uid="uid://brilmafg5h2ue" path="res://walls.tres" id="1_xra12"]
@@ -52,6 +52,9 @@ _data = {
 bg_color = Color(0.211765, 0.211765, 0.211765, 0.584314)
 
 [sub_resource type="FontVariation" id="FontVariation_l33qk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jahot"]
+size = Vector2(65, 48)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_h1fm5")
@@ -130,9 +133,16 @@ text = "SCORE:"
 [node name="monster1" parent="." instance=ExtResource("8_1hsi7")]
 position = Vector2(141, 542)
 
+[node name="Area2D2" type="Area2D" parent="monster1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monster1/Area2D2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jahot")
+
 [connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered"]
 [connection signal="coin_collected" from="Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin3" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin4" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="body_entered" from="monster1/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
