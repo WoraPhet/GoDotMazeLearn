@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 200
+var current_level = 1
 @onready var animation =  $Sprite2D
 
 func _physics_process(delta):
@@ -20,3 +21,7 @@ func _physics_process(delta):
 		animation.play("Down")
 	else:
 		animation.play("idle")
+
+
+func _on_Player_screen_notifier_2d_screen_exited():
+	get_tree().change_scene_to_file("res://level_"+ str(current_level+1) +".tscn")

@@ -11,21 +11,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7yk"]
 size = Vector2(32, 32)
 
-[sub_resource type="Animation" id="Animation_jdgj7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1264, 48)]
-}
-
 [sub_resource type="Animation" id="Animation_h2jf3"]
 resource_name = "SlideUp"
 tracks/0/type = "value"
@@ -39,6 +24,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1264, 48), Vector2(1264, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_jdgj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1264, 48)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kb2tu"]
@@ -86,19 +86,11 @@ position = Vector2(85, 237)
 scale = Vector2(0.05, 0.05)
 
 [node name="Coin2" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(237, 584)
+position = Vector2(337, 374)
 scale = Vector2(0.05, 0.05)
 
 [node name="Coin3" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(450, 228)
-scale = Vector2(0.05, 0.05)
-
-[node name="Coin4" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(670, 561)
-scale = Vector2(0.05, 0.05)
-
-[node name="Coin5" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(1054, 295)
+position = Vector2(460, 216)
 scale = Vector2(0.05, 0.05)
 
 [node name="HUD" type="Control" parent="."]
@@ -127,8 +119,3 @@ theme_override_fonts/font = SubResource("FontVariation_l33qk")
 text = "SCORE:"
 
 [connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered"]
-[connection signal="coin_collected" from="Coin" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coin2" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coin3" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coin4" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coin5" to="HUD" method="_on_coin_collected"]

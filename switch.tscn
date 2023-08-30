@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dltvni510ttsm"]
+[gd_scene load_steps=6 format=3 uid="uid://dltvni510ttsm"]
 
 [ext_resource type="Texture2D" uid="uid://fv1b08wx8yy4" path="res://lever1.png" id="1_wyxww"]
 [ext_resource type="Texture2D" uid="uid://dhugdmkttlkwi" path="res://lever2.png" id="2_i6n3h"]
+[ext_resource type="AudioStream" uid="uid://05iqiy8w12wx" path="res://ESM_App_Interface_Click_2_Game_Synth_Electronic_Cartoon_User_Interface_Switch.wav" id="3_mv2pf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrnlr"]
 animations = [{
@@ -28,3 +29,6 @@ sprite_frames = SubResource("SpriteFrames_wrnlr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_td8sr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mv2pf")
