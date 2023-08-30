@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj5ppe25tbd6k"]
+[gd_scene load_steps=15 format=3 uid="uid://dj5ppe25tbd6k"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_h1fm5"]
 [ext_resource type="TileSet" uid="uid://brilmafg5h2ue" path="res://walls.tres" id="1_xra12"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="3_apnct"]
 [ext_resource type="PackedScene" uid="uid://dltvni510ttsm" path="res://switch.tscn" id="6_a03ap"]
 [ext_resource type="Script" path="res://HUD.gd" id="7_i5cvt"]
+[ext_resource type="PackedScene" uid="uid://bqny3r71hgxji" path="res://monster_1.tscn" id="8_1hsi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7yk"]
 size = Vector2(32, 32)
@@ -125,6 +126,9 @@ offset_right = 70.0
 offset_bottom = 38.0
 theme_override_fonts/font = SubResource("FontVariation_l33qk")
 text = "SCORE:"
+
+[node name="monster1" parent="." instance=ExtResource("8_1hsi7")]
+position = Vector2(141, 542)
 
 [connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered"]
 [connection signal="coin_collected" from="Coin" to="HUD" method="_on_coin_collected"]
