@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvfdfy0qgn0ul"]
+
+[ext_resource type="Script" path="res://ScoreBoard.gd" id="1_qrk6b"]
+
+[node name="ScoreBoard_BTN" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Score Board"
+script = ExtResource("1_qrk6b")

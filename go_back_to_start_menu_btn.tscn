@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://curmfm2h1efkn"]
+
+[ext_resource type="Script" path="res://GoBack_ToStartMenu_BTN.gd" id="1_pkc0i"]
+
+[node name="GoBack_ToStartMenu_BTN" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Go back"
+script = ExtResource("1_pkc0i")

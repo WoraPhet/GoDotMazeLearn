@@ -33,3 +33,5 @@ func _on_Player_screen_notifier_2d_screen_exited():
 func _on_area_2d_2_body_entered(body):
 	if body.name == "Player":
 		$ProgressBar.value -= 10
+	if $ProgressBar.value <= 0:
+		get_tree().change_scene_to_file("res://game_over.tscn")
