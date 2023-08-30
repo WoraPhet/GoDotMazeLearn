@@ -19,8 +19,11 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_down"):
 		position.y += speed * delta
 		animation.play("Down")
+	elif is_on_wall():
+		animation.play("idle")
 	else:
 		animation.play("idle")
+	move_and_slide()	
 
 
 func _on_Player_screen_notifier_2d_screen_exited():

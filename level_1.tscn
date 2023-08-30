@@ -84,6 +84,8 @@ position = Vector2(179, 589)
 
 [node name="Player" parent="." instance=ExtResource("2_rh00f")]
 position = Vector2(71, 84)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Coin" parent="." instance=ExtResource("3_apnct")]
 position = Vector2(85, 237)
