@@ -1,5 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://i7778i5xq2l8"]
+[gd_scene load_steps=34 format=3 uid="uid://i7778i5xq2l8"]
 
+[ext_resource type="Script" path="res://coin.gd" id="1_80ax1"]
 [ext_resource type="Texture2D" uid="uid://d085888mw1xec" path="res://Gold/Gold_1.png" id="1_vaa8m"]
 [ext_resource type="Texture2D" uid="uid://ce1wpmwx71ryn" path="res://Gold/Gold_2.png" id="2_hmqeb"]
 [ext_resource type="Texture2D" uid="uid://bbbms75o3v8bl" path="res://Gold/Gold_3.png" id="3_ab6a4"]
@@ -134,6 +135,7 @@ radius = 284.788
 
 [node name="Coin" type="Area2D"]
 scale = Vector2(0.1, 0.1)
+script = ExtResource("1_80ax1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3gltp")
@@ -143,3 +145,5 @@ frame_progress = 0.630056
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ls8eu")
+
+[connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]

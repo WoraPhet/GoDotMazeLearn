@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dltvni510ttsm"]
+
+[ext_resource type="Texture2D" uid="uid://fv1b08wx8yy4" path="res://lever1.png" id="1_wyxww"]
+[ext_resource type="Texture2D" uid="uid://dhugdmkttlkwi" path="res://lever2.png" id="2_i6n3h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrnlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wyxww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6n3h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td8sr"]
+size = Vector2(29, 37)
+
+[node name="Switch" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wrnlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_td8sr")
