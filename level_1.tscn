@@ -64,21 +64,6 @@ libraries = {
 "": SubResource("AnimationLibrary_kb2tu")
 }
 
-[node name="Door2" type="StaticBody2D" parent="."]
-position = Vector2(1264, 48)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Door2"]
-texture = ExtResource("2_vl4op")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
-shape = SubResource("RectangleShape2D_jy7yk")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
-libraries = {
-"": SubResource("AnimationLibrary_kb2tu")
-}
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_xra12")
 format = 2
