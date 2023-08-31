@@ -6,7 +6,7 @@
 default_font_size = 48
 
 [node name="TextInput_move" type="LineEdit"]
-offset_right = 702.0
+offset_right = 1057.0
 offset_bottom = 94.0
 scale = Vector2(1.03227, 1)
 theme = SubResource("Theme_dyo75")

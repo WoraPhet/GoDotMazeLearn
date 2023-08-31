@@ -123,7 +123,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22dgl"]
-size = Vector2(56, 56)
+size = Vector2(184, 188)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ellh3"]
 bg_color = Color(0.556863, 0, 0.0745098, 1)
@@ -133,11 +133,13 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_uylhu")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
+texture_filter = 1
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_w2wen")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_22dgl")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -149,6 +151,7 @@ offset_right = 48.0
 offset_bottom = -47.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_ellh3")
 value = 100.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -8,3 +8,6 @@ func _on_switch_body_entered(body):
 		$Switch/AnimatedSprite2D.frame = 1
 		$Door/AnimationPlayer.play("SlideUp")
 		$Switch/AudioStreamPlayer2D.play()
+
+
+

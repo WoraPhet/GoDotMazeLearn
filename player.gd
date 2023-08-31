@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-var speed = 200
+#var currPos = [10,5]
+var speed = 6600
+const PIXEL_SIZE = 111
 var can_walk = true
 var timer = null
 var step_delay = 2
@@ -9,7 +11,16 @@ var input_queue = []
 @onready var animation =  $Sprite2D
 func _ready():
 	pass
-
+"""
+func _input(event):
+	if event.is_action_pressed("ui_right"):
+		currPos[0] +=32
+		get_node("Sprite2D").look_at(self.position + Vector2(1,0))
+		get_node("CollisionShape2D").look_at(self.position + Vector2(1,0))
+		animation.play("Right")
+	
+	self.position = Vector2(currPos[0], currPos[1])
+"""
 func _on_timer_timeout():
 	print("Time OUT NOW")
 	can_walk = true
@@ -19,22 +30,25 @@ func _physics_process(delta):
 		var char = input_queue.pop_front()
 		print(input_queue)
 		if Input.is_action_pressed("ui_right") or char == "r":
-			position.x += speed * delta
+			position.x += PIXEL_SIZE
 			animation.play("Right")
 			get_node("Sprite2D").set_flip_h(false)#not flip
+			
 		elif Input.is_action_pressed("ui_left") or char == "l":
-			position.x -= speed * delta
+			position.x -= PIXEL_SIZE
 			animation.play("Left")
 			get_node("Sprite2D").set_flip_h(true)#flip side
+			
 		elif Input.is_action_pressed("ui_up") or char == "u":
-			position.y -= speed * delta
+			position.y -= PIXEL_SIZE
 			animation.play("Up")
 		elif Input.is_action_pressed("ui_down") or char == "d":
-			position.y += speed * delta
+			position.y += PIXEL_SIZE
 			animation.play("Down")
 			
 		elif is_on_wall():
 			animation.play("idle")
+			can_walk = false
 		else:
 			animation.play("idle")
 		move_and_slide()	
@@ -55,7 +69,7 @@ func _on_area_2d_2_body_entered(body):
 		get_tree().change_scene_to_file("res://game_over.tscn")
 
 
-func _on_line_edit_text_submitted(new_text):
+func _on_text_input_move_text_submitted(new_text):
 	var line_edit_text = new_text
 	process_value(line_edit_text)
 	
@@ -67,7 +81,6 @@ func process_value(value: String):
 		input_queue.append(i)
 	print(input_queue)
 	# You can call other functions and pass this value if needed
-
 
 
 
