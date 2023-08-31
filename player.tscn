@@ -150,4 +150,9 @@ offset_bottom = -47.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_ellh3")
 value = 100.0
 
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_Player_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
