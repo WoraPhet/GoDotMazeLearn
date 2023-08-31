@@ -1,0 +1,153 @@
+[gd_scene load_steps=19 format=3 uid="uid://m7wfoofo1pe0"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_uylhu"]
+[ext_resource type="Texture2D" uid="uid://cmqm51b1f83sw" path="res://slime.png" id="2_jcwet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qon7h"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sguir"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dajs"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi7lr"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38fv5"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6knc"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqrd4"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwprf"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5exs6"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wj2h"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j085s"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwvci"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u7r6"]
+atlas = ExtResource("2_jcwet")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2wen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qon7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sguir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dajs")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi7lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38fv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6knc")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqrd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwprf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5exs6")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wj2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j085s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwvci")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u7r6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22dgl"]
+size = Vector2(56, 56)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ellh3"]
+bg_color = Color(0.556863, 0, 0.0745098, 1)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_uylhu")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_w2wen")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_22dgl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -48.0
+offset_top = -74.0
+offset_right = 48.0
+offset_bottom = -47.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ellh3")
+value = 100.0
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_Player_screen_notifier_2d_screen_exited"]

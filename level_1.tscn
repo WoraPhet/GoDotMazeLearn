@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dj5ppe25tbd6k"]
+[gd_scene load_steps=17 format=3 uid="uid://dj5ppe25tbd6k"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_h1fm5"]
 [ext_resource type="TileSet" uid="uid://brilmafg5h2ue" path="res://walls.tres" id="1_xra12"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dltvni510ttsm" path="res://switch.tscn" id="6_a03ap"]
 [ext_resource type="Script" path="res://HUD.gd" id="7_i5cvt"]
 [ext_resource type="PackedScene" uid="uid://bqny3r71hgxji" path="res://monster_1.tscn" id="8_1hsi7"]
+[ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_ct8vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7yk"]
 size = Vector2(32, 32)
@@ -141,6 +142,12 @@ position = Vector2(141, 542)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_jahot")
 
+[node name="LineEdit" parent="." instance=ExtResource("9_ct8vs")]
+offset_left = 277.0
+offset_top = 482.0
+offset_right = 979.0
+offset_bottom = 576.0
+
 [connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered"]
 [connection signal="coin_collected" from="Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin2" to="HUD" method="_on_coin_collected"]
@@ -148,3 +155,4 @@ shape = SubResource("RectangleShape2D_jahot")
 [connection signal="coin_collected" from="Coin4" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin5" to="HUD" method="_on_coin_collected"]
 [connection signal="body_entered" from="monster1/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="text_submitted" from="LineEdit" to="Player" method="_on_line_edit_text_submitted"]

@@ -31,6 +31,7 @@ offset_right = 590.0
 offset_bottom = 461.0
 
 [node name="GoBack_ToStartMenu_BTN" parent="Control" instance=ExtResource("2_bc6qd")]
+layout_mode = 0
 offset_left = 659.0
 offset_top = 429.0
 offset_right = 729.0
