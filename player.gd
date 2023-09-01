@@ -8,6 +8,7 @@ var timer = null
 var step_delay = 2
 var current_level = 1
 var input_queue = []
+var accept_input_queue = []
 @onready var animation =  $Sprite2D
 func _ready():
 	pass
@@ -84,3 +85,7 @@ func process_value(value: String):
 
 
 
+
+
+func _on_test_approve_dfa(approve_text):
+	accept_input_queue.append(approve_text)

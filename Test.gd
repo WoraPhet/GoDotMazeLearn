@@ -1,5 +1,7 @@
 extends Node2D
 
+signal approve_DFA(approve_text)
+
 class node:
 	var name
 	var is_final_state = false
@@ -52,6 +54,7 @@ class myDFA_L1:
 			if(i == "U"):
 				if (presentState.name != presentState.transition_inputU.name):
 					presentState = presentState.transition_inputU
+					emit_signal("approve_DFA","U")
 					print("turn UP")
 					print(presentState.name)
 				else:
@@ -60,6 +63,7 @@ class myDFA_L1:
 			elif(i == "R"):
 				if (presentState.name != presentState.transition_inputR.name):
 					presentState = presentState.transition_inputR
+					emit_signal("approve_DFA","R")
 					print("turn Right")
 					print(presentState.name)
 				else:
@@ -69,6 +73,7 @@ class myDFA_L1:
 			elif(i == "D"):
 				if (presentState.name != presentState.transition_inputD.name):
 					presentState = presentState.transition_inputD
+					emit_signal("approve_DFA","D")
 					print("turn Down")
 					print(presentState.name)
 				else:
@@ -77,6 +82,7 @@ class myDFA_L1:
 			elif(i == "L"):
 				if (presentState.name != presentState.transition_inputL.name):
 					presentState = presentState.transition_inputL
+					emit_signal("approve_DFA","L")
 					print("turn Left")
 					print(presentState.name)
 				else:
