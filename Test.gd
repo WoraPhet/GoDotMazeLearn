@@ -24,7 +24,7 @@ class myDFA_L1:
 		
 		q3.is_final_state = true
 		
-		q0.transition_inputR = q1##
+		q0.transition_inputR = q1
 		q0.transition_inputD = q0
 		q0.transition_inputL = q0
 		q0.transition_inputU = q0
@@ -50,17 +50,38 @@ class myDFA_L1:
 		print(presentState.name)
 		for i in input:
 			if(i == "U"):
-				presentState = presentState.transition_inputU
-				print(presentState.name)
+				if (presentState.name != presentState.transition_inputU.name):
+					presentState = presentState.transition_inputU
+					print("turn UP")
+					print(presentState.name)
+				else:
+					print("StayStill")
+					print(presentState.name)
 			elif(i == "R"):
-				presentState = presentState.transition_inputR
-				print(presentState.name)
+				if (presentState.name != presentState.transition_inputR.name):
+					presentState = presentState.transition_inputR
+					print("turn Right")
+					print(presentState.name)
+				else:
+					print("StayStill")
+					print(presentState.name)
+					
 			elif(i == "D"):
-				presentState = presentState.transition_inputD
-				print(presentState.name)
+				if (presentState.name != presentState.transition_inputD.name):
+					presentState = presentState.transition_inputD
+					print("turn Down")
+					print(presentState.name)
+				else:
+					print("StayStill")
+					print(presentState.name)
 			elif(i == "L"):
-				presentState = presentState.transition_inputL
-				print(presentState.name)
+				if (presentState.name != presentState.transition_inputL.name):
+					presentState = presentState.transition_inputL
+					print("turn Left")
+					print(presentState.name)
+				else:
+					print("StayStill")
+					print(presentState.name)
 		return presentState.is_final_state
 # Called when the node enters the scene tree for the first time.	
 	
