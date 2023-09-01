@@ -9,53 +9,39 @@ func _ready():
 	pass
 
 class node:
-	var name
-	var is_final_state = false
-	var transition_inputU
-	var transition_inputD
-	var transition_inputL
-	var transition_inputR
+	var name:String
+	var is_final_state:bool = false
+	var transition_inputU:node
+	var transition_inputD:node
+	var transition_inputL:node
+	var transition_inputR:node
+	
+	func _init(Name: String = "", is_final:bool = false):
+		name  = Name
+		is_final_state = is_final
+	
+	func setTransition(transition_InputU:node, transition_InputD:node,transition_InputL:node,transition_InputR:node):
+		transition_inputU = transition_InputU
+		transition_inputD = transition_InputD
+		transition_inputL =transition_InputL
+		transition_inputR = transition_InputR
 	
 class myDFA_L1:
-	signal approve_dfa(approve_text)
-	var q0 = node.new()
-	var q1 = node.new()
-	var q2 = node.new()
-	var q3 = node.new()
-	var trap = node.new()
-	var sendR = node.new()
+	# defind State 
+	var q0 = node.new("q0")
+	var q1 = node.new("q1")
+	var q2 = node.new("q2")
+	var q3 = node.new("q3",true) #final State
+	var trap = node.new("trap")
 	
-	func initState():
-		q0.name = "q0"
-		q1.name = "q1"
-		q2.name = "q2"
-		q3.name = "q3"
-		trap.name = "trap"
-		sendR.name = "R"
-		
-		q3.is_final_state = true
-		
-		q0.transition_inputR = q1
-		q0.transition_inputD = q0
-		q0.transition_inputL = q0
-		q0.transition_inputU = q0
-		
-		q1.transition_inputR = q1
-		q1.transition_inputD = q2##
-		q1.transition_inputL = q0
-		q1.transition_inputU = q1
-		
-		q2.transition_inputR = q2
-		q2.transition_inputD = trap
-		q2.transition_inputL = q3##
-		q2.transition_inputU = q2
-		
-		q3.transition_inputR = trap
-		q3.transition_inputD = trap
-		q3.transition_inputL = trap
-		q3.transition_inputU = trap
+	func _init():
+		# setState to next State
+		q0.setTransition(q0,q0,q0,q1)  # InputU, InputD, InputL, InputR
+		q1.setTransition(q1,q2,q0,q1)
+		q2.setTransition(q2,trap,q3,q2)
+		q3.setTransition(trap,trap,trap,trap)
+	
 	func determine(input: String):
-		initState()
 		var presentState = node.new()
 		presentState = q0
 		print(presentState.name)
