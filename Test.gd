@@ -1,12 +1,5 @@
 extends Node2D
 
-
-signal approve_dfa(approve_text)
-
-func _ready():
-	#emit_signal("approve_dfa","From Readyyyyyyyyyyyyyyyyy")
-	pass
-
 class node:
 	var name:String
 	var is_final_state:bool = false
@@ -37,13 +30,15 @@ class myDFA_L1:
 		# setState to next State
 		q0.setTransition(q0,q0,q0,q1)  # InputU, InputD, InputL, InputR
 		q1.setTransition(q1,q2,q0,q1)
-		q2.setTransition(q2,trap,q3,q2)
-		q3.setTransition(trap,trap,trap,trap)
+		q2.setTransition(q2,q2,q3,q2)
+		q3.setTransition(q3,q3,q3,q3)
+		trap.setTransition(trap,trap,trap,trap)
 	
 	
 	func determine(input: String):
 		var presentState = node.new()
 		presentState = q0
+		print(input)
 		print(presentState.name)
 		for i in input:
 			if(i == "U"):
@@ -83,6 +78,8 @@ class myDFA_L1:
 				else:
 					DfaSig.emit_signal("DFA_check","4")
 					print(presentState.name)
+			elif(i == "P"):
+				DfaSig.emit_signal("DFA_check","P")
 		return presentState.is_final_state
 # Called when the node enters the scene tree for the first time.	
 	
@@ -90,12 +87,14 @@ class myDFA_L1:
 func _on_text_input_move_text_submitted(new_text):
 	var inpToDFA = myDFA_L1.new()
 	var is_complete = inpToDFA.determine(new_text.to_upper())
-	print(is_complete)
-
+	if(is_complete):
+		print(is_complete)
+		DfaSig.emit_signal("DFA_check","Z")
+	else:
+		print(is_complete)
+		DfaSig.emit_signal("DFA_check","N")
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 
