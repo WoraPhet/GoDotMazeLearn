@@ -16,3 +16,5 @@ offset_bottom = 662.0
 [node name="Player" parent="." instance=ExtResource("4_66f0c")]
 position = Vector2(232, 184)
 scale = Vector2(0.516135, 0.5)
+
+[connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
