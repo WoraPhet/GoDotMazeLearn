@@ -6,7 +6,8 @@ var minute = 0
 
 #func _on_button_pressed():
 #	$Timer.start()
-
+func _ready():
+	$Timer.start()
 	
 
 func game_time():
@@ -20,13 +21,13 @@ func game_time():
 			$timeStamp.text = str(minute) + ":" + str(sec)
 		else:
 			$Timer.stop()
-			$timeStamp.visible = !$timeStamp.visible
+			#$timeStamp.visible = !$timeStamp.visible
 			get_tree().change_scene_to_file("res://game_over.tscn")
 func _on_timer_timeout():
 	game_time()
 
 
 
-func _on_test_reset_timer():
-	$Timer.start()
-	print("Signal from biggest ready")
+#func _on_test_reset_timer():
+	#$Timer.start()
+	#print("Signal from biggest ready")
