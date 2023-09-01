@@ -62,22 +62,15 @@ class myDFA_L1:
 				presentState = presentState.transition_inputL
 				print(presentState.name)
 		return presentState.is_final_state
-# Called when the node enters the scene tree for the first time.
-"""
-func _ready():
-	var obj = myDFA_L1.new()
-	var is_complete = obj.determine("RLRDL")
-	print(is_complete)
-"""	
+# Called when the node enters the scene tree for the first time.	
 	
 	
 func _on_text_input_move_text_submitted(new_text):
 	var inpToDFA = myDFA_L1.new()
-	var is_complete = inpToDFA.determine(new_text)
+	var is_complete = inpToDFA.determine(new_text.to_upper())
 	print(is_complete)
 
 	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

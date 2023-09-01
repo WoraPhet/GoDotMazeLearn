@@ -29,20 +29,20 @@ func _physics_process(delta):
 	while !input_queue.is_empty() && can_walk:
 		var char = input_queue.pop_front()
 		print(input_queue)
-		if Input.is_action_pressed("ui_right") or char == "r":
+		if Input.is_action_pressed("ui_right") or char == "R":
 			position.x += PIXEL_SIZE
 			animation.play("Right")
 			get_node("Sprite2D").set_flip_h(false)#not flip
 			
-		elif Input.is_action_pressed("ui_left") or char == "l":
+		elif Input.is_action_pressed("ui_left") or char == "L":
 			position.x -= PIXEL_SIZE
 			animation.play("Left")
 			get_node("Sprite2D").set_flip_h(true)#flip side
 			
-		elif Input.is_action_pressed("ui_up") or char == "u":
+		elif Input.is_action_pressed("ui_up") or char == "U":
 			position.y -= PIXEL_SIZE
 			animation.play("Up")
-		elif Input.is_action_pressed("ui_down") or char == "d":
+		elif Input.is_action_pressed("ui_down") or char == "D":
 			position.y += PIXEL_SIZE
 			animation.play("Down")
 			
@@ -75,7 +75,7 @@ func _on_text_input_move_text_submitted(new_text):
 	
 func process_value(value: String):
 	# Do something with the value, such as printing it
-	value = value.to_lower()
+	value = value.to_upper()
 	print("Entered value: ", value)
 	for i in value:
 		input_queue.append(i)
