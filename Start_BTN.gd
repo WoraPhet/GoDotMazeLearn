@@ -1,4 +1,4 @@
 extends Button
 
 func _pressed():
-	get_tree().change_scene_to_file("res://biggest.tscn") #Levelแรก
+	get_tree().change_scene_to_file("res://test.tscn") #Levelแรก
