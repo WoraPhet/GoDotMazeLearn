@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ifkoys3kmbtg"]
+[gd_scene load_steps=4 format=3 uid="uid://ifkoys3kmbtg"]
 
 [ext_resource type="Script" path="res://Test.gd" id="1_u2880"]
+[ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="3_556lh"]
+[ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="4_66f0c"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_u2880")
+
+[node name="TextInput_move" parent="." instance=ExtResource("3_556lh")]
+offset_left = 96.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 662.0
+
+[node name="Player" parent="." instance=ExtResource("4_66f0c")]
+position = Vector2(232, 184)
+scale = Vector2(0.516135, 0.5)
