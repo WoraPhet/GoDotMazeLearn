@@ -8,6 +8,7 @@ var timer = null
 var step_delay = 2
 var current_level = 1
 var input_queue = []
+var dfa_queue = []
 var accept_input_queue = []
 @onready var animation =  $Sprite2D
 func _ready():
@@ -27,26 +28,33 @@ func _on_timer_timeout():
 	can_walk = true
 
 func _physics_process(delta):
-	while !input_queue.is_empty() && can_walk:
-		var char = input_queue.pop_front()
-		print(input_queue)
-		if Input.is_action_pressed("ui_right") or char == "R":
+	while !dfa_queue.is_empty() && can_walk:
+		var char = dfa_queue.pop_front()
+		print(dfa_queue)
+		if char == "R":
 			position.x += PIXEL_SIZE
 			animation.play("Right")
 			get_node("Sprite2D").set_flip_h(false)#not flip
 			
-		elif Input.is_action_pressed("ui_left") or char == "L":
+		elif char == "L":
 			position.x -= PIXEL_SIZE
 			animation.play("Left")
 			get_node("Sprite2D").set_flip_h(true)#flip side
 			
-		elif Input.is_action_pressed("ui_up") or char == "U":
+		elif  char == "U":
 			position.y -= PIXEL_SIZE
 			animation.play("Up")
-		elif Input.is_action_pressed("ui_down") or char == "D":
+		elif char == "D":
 			position.y += PIXEL_SIZE
 			animation.play("Down")
-			
+		elif char == "6":
+			animation.play("Right")
+		elif char == "4":
+			animation.play("Left")
+		elif char == "8":
+			animation.play("Up")
+		elif char == "2":
+			animation.play("Down")
 		elif is_on_wall():
 			animation.play("idle")
 			can_walk = false
@@ -85,6 +93,6 @@ func process_value(value: String):
 
 
 func DFA_check(text):
-	print(text)
-func _on_test_approve_dfa(approve_text): #signal จาก ไฟล์ใหญ่ Scene
-	print(approve_text)
+	dfa_queue.append(text)
+	print(dfa_queue)
+	

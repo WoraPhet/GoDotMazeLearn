@@ -2,7 +2,6 @@ extends Node2D
 
 
 signal approve_dfa(approve_text)
-var queue = []
 
 func _ready():
 	#emit_signal("approve_dfa","From Readyyyyyyyyyyyyyyyyy")
@@ -41,6 +40,7 @@ class myDFA_L1:
 		q2.setTransition(q2,trap,q3,q2)
 		q3.setTransition(trap,trap,trap,trap)
 	
+	
 	func determine(input: String):
 		var presentState = node.new()
 		presentState = q0
@@ -49,39 +49,39 @@ class myDFA_L1:
 			if(i == "U"):
 				if (presentState.name != presentState.transition_inputU.name):
 					presentState = presentState.transition_inputU
-					DfaSig.emit_signal("DFA_check","Test TextUUUUUUUU")
+					DfaSig.emit_signal("DFA_check","U")
 					#print("turn UP")
 					print(presentState.name)
 				else:
-					print("StayStill")
+					DfaSig.emit_signal("DFA_check","8")
 					print(presentState.name)
 			elif(i == "R"):
 				if (presentState.name != presentState.transition_inputR.name):
 					presentState = presentState.transition_inputR
-					DfaSig.emit_signal("DFA_check","Test TextRRRRRRRR")
+					DfaSig.emit_signal("DFA_check","R")
 					#print("turn Right")
 					print(presentState.name)
 				else:
-					print("StayStill")
+					DfaSig.emit_signal("DFA_check","6")
 					print(presentState.name)
 					
 			elif(i == "D"):
 				if (presentState.name != presentState.transition_inputD.name):
 					presentState = presentState.transition_inputD
-					DfaSig.emit_signal("DFA_check","Test TextDDDDDDDD")
+					DfaSig.emit_signal("DFA_check","D")
 					#print("turn Down")
 					print(presentState.name)
 				else:
-					print("StayStill")
+					DfaSig.emit_signal("DFA_check","2")
 					print(presentState.name)
 			elif(i == "L"):
 				if (presentState.name != presentState.transition_inputL.name):
 					presentState = presentState.transition_inputL
-					DfaSig.emit_signal("DFA_check","Test TextLLLLLLLL")
+					DfaSig.emit_signal("DFA_check","L")
 					#print("turn Left")
 					print(presentState.name)
 				else:
-					print("StayStill")
+					DfaSig.emit_signal("DFA_check","4")
 					print(presentState.name)
 		return presentState.is_final_state
 # Called when the node enters the scene tree for the first time.	
