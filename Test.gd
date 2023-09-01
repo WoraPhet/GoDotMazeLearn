@@ -1,4 +1,7 @@
 extends Node2D
+signal resetTimer
+func _ready():
+	emit_signal("resetTimer")
 
 class node:
 	var name:String

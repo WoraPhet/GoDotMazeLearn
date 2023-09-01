@@ -136,7 +136,8 @@ script = ExtResource("1_uylhu")
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_w2wen")
-animation = &"idle"
+animation = &"Down"
+frame_progress = 0.743087
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

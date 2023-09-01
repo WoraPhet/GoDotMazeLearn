@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2p1qy2yutjpm"]
+
+[ext_resource type="PackedScene" uid="uid://ifkoys3kmbtg" path="res://test.tscn" id="1_sm55b"]
+[ext_resource type="PackedScene" uid="uid://cilr8kie0aciv" path="res://game_time.tscn" id="2_nliln"]
+
+[node name="Biggest" type="Node2D"]
+
+[node name="Test" parent="." instance=ExtResource("1_sm55b")]
+
+[node name="GameTime" parent="." instance=ExtResource("2_nliln")]
+
+[connection signal="resetTimer" from="Test" to="GameTime" method="_on_test_reset_timer"]

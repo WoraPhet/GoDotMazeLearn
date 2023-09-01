@@ -1,6 +1,8 @@
 extends Node2D
+signal resetTime
 
-
+func _ready():
+	emit_signal("resetTime")
 
 
 func _on_switch_body_entered(body):

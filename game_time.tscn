@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cilr8kie0aciv"]
+
+[ext_resource type="Script" path="res://game_time.gd" id="1_7u20e"]
+[ext_resource type="Script" path="res://Timer.gd" id="2_nlo1v"]
+
+[node name="GameTime" type="Node"]
+script = ExtResource("1_7u20e")
+
+[node name="timeStamp" type="Label" parent="."]
+offset_left = 1176.0
+offset_top = 34.0
+offset_right = 1216.0
+offset_bottom = 60.0
+text = "0 : 0"
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("2_nlo1v")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
