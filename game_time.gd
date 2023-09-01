@@ -7,8 +7,7 @@ var minute = 0
 #func _on_button_pressed():
 #	$Timer.start()
 func _ready():
-	$Timer.start()
-	
+	TimeTriggerSig.connect("start_timer",start_timer)
 
 func game_time():
 	if sec > 0:
@@ -27,7 +26,9 @@ func _on_timer_timeout():
 	game_time()
 
 
-
+func start_timer(start_timer):
+	print("FUCK Signalllllllllllllllll")
+	$Timer.start()
 #func _on_test_reset_timer():
 	#$Timer.start()
 	#print("Signal from biggest ready")

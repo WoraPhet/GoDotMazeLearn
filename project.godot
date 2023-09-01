@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Global.gd"
 DfaSig="*res://DFA_Sig.gd"
 GameTimeUI="*res://game_time.tscn"
+TimeTriggerSig="*res://timeTrigger.gd"
 
 [display]
 
