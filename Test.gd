@@ -1,6 +1,12 @@
 extends Node2D
 
-signal approve_DFA(approve_text)
+
+signal approve_dfa(approve_text)
+var queue = []
+
+func _ready():
+	#emit_signal("approve_dfa","From Readyyyyyyyyyyyyyyyyy")
+	pass
 
 class node:
 	var name
@@ -11,18 +17,21 @@ class node:
 	var transition_inputR
 	
 class myDFA_L1:
-	
+	signal approve_dfa(approve_text)
 	var q0 = node.new()
 	var q1 = node.new()
 	var q2 = node.new()
 	var q3 = node.new()
 	var trap = node.new()
+	var sendR = node.new()
+	
 	func initState():
 		q0.name = "q0"
 		q1.name = "q1"
 		q2.name = "q2"
 		q3.name = "q3"
 		trap.name = "trap"
+		sendR.name = "R"
 		
 		q3.is_final_state = true
 		
@@ -54,8 +63,8 @@ class myDFA_L1:
 			if(i == "U"):
 				if (presentState.name != presentState.transition_inputU.name):
 					presentState = presentState.transition_inputU
-					emit_signal("approve_DFA","U")
-					print("turn UP")
+					DfaSig.emit_signal("DFA_check","Test TextUUUUUUUU")
+					#print("turn UP")
 					print(presentState.name)
 				else:
 					print("StayStill")
@@ -63,8 +72,8 @@ class myDFA_L1:
 			elif(i == "R"):
 				if (presentState.name != presentState.transition_inputR.name):
 					presentState = presentState.transition_inputR
-					emit_signal("approve_DFA","R")
-					print("turn Right")
+					DfaSig.emit_signal("DFA_check","Test TextRRRRRRRR")
+					#print("turn Right")
 					print(presentState.name)
 				else:
 					print("StayStill")
@@ -73,8 +82,8 @@ class myDFA_L1:
 			elif(i == "D"):
 				if (presentState.name != presentState.transition_inputD.name):
 					presentState = presentState.transition_inputD
-					emit_signal("approve_DFA","D")
-					print("turn Down")
+					DfaSig.emit_signal("DFA_check","Test TextDDDDDDDD")
+					#print("turn Down")
 					print(presentState.name)
 				else:
 					print("StayStill")
@@ -82,8 +91,8 @@ class myDFA_L1:
 			elif(i == "L"):
 				if (presentState.name != presentState.transition_inputL.name):
 					presentState = presentState.transition_inputL
-					emit_signal("approve_DFA","L")
-					print("turn Left")
+					DfaSig.emit_signal("DFA_check","Test TextLLLLLLLL")
+					#print("turn Left")
 					print(presentState.name)
 				else:
 					print("StayStill")

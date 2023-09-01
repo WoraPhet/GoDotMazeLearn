@@ -11,7 +11,7 @@ var input_queue = []
 var accept_input_queue = []
 @onready var animation =  $Sprite2D
 func _ready():
-	pass
+	DfaSig.connect("DFA_check", DFA_check)
 """
 func _input(event):
 	if event.is_action_pressed("ui_right"):
@@ -84,8 +84,7 @@ func process_value(value: String):
 	# You can call other functions and pass this value if needed
 
 
-
-
-
-func _on_test_approve_dfa(approve_text):
-	accept_input_queue.append(approve_text)
+func DFA_check(text):
+	print(text)
+func _on_test_approve_dfa(approve_text): #signal จาก ไฟล์ใหญ่ Scene
+	print(approve_text)
