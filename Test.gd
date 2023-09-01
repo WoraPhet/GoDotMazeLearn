@@ -1,6 +1,6 @@
 extends Node2D
 func _ready():
-	TimeTriggerSig.emit_signal("start_timer","un_use")
+	TimeTriggerSig.emit_signal("start_timer","show")
 
 class node:
 	var name:String
