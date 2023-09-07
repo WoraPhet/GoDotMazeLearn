@@ -1,8 +1,8 @@
 extends Control
 
+
+
 func _ready():
-	$Label.text = "SCORE: " + str(Global.score)
-
-
-func _on_coin_collected():
-	_ready() #Update score from signal
+	Global.score_minus = 0
+func _process(delta):
+	$Label.text = "SCORE: " + str(Global.score+Global.score_minus) #Update score from signal

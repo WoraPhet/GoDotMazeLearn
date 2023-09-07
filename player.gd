@@ -49,9 +49,12 @@ func _physics_process(delta):
 		elif char == "2":
 			animation.play("Down")
 		elif char == "Z":
+			Global.score += Global.score_minus
 			get_tree().change_scene_to_file("res://level_"+ str(current_level+1) +".tscn")
 		elif char == "N":
+			#Global.score -= Global.score_minus
 			get_tree().change_scene_to_file("res://test.tscn")
+			
 		else:
 			animation.play("idle")
 		move_and_slide()	

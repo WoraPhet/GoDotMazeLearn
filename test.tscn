@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ifkoys3kmbtg"]
+[gd_scene load_steps=6 format=3 uid="uid://ifkoys3kmbtg"]
 
 [ext_resource type="Script" path="res://Test.gd" id="1_u2880"]
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="3_556lh"]
 [ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="4_66f0c"]
+[ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="4_yy8ce"]
+[ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="5_ooe6b"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_u2880")
@@ -16,5 +18,10 @@ offset_bottom = 662.0
 [node name="Player" parent="." instance=ExtResource("4_66f0c")]
 position = Vector2(232, 184)
 scale = Vector2(0.516135, 0.5)
+
+[node name="Coin" parent="." instance=ExtResource("4_yy8ce")]
+position = Vector2(320, 184)
+
+[node name="HUD" parent="." instance=ExtResource("5_ooe6b")]
 
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]

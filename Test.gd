@@ -91,10 +91,13 @@ func _on_text_input_move_text_submitted(new_text):
 	var is_complete = inpToDFA.determine(new_text.to_upper())
 	if(is_complete):
 		print(is_complete)
+		
 		DfaSig.emit_signal("DFA_check","Z")
 	else:
 		print(is_complete)
+		
 		DfaSig.emit_signal("DFA_check","N")
+		
 	
 
 
