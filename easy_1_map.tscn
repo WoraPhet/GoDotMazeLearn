@@ -1,13 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://cyyew4opskby5"]
+[gd_scene load_steps=28 format=3 uid="uid://dfw5cjcltjuy2"]
 
 [ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="1_vjuax"]
-[ext_resource type="Script" path="res://ScoreCoin.gd" id="2_h7ksf"]
-[ext_resource type="Texture2D" uid="uid://dhg0pi7hbhy5s" path="res://Objects/Score_coin.png" id="3_74et0"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_a0hm5"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_v1ewu"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_3s353"]
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="7_75ofp"]
-[ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="8_h1sej"]
 
 [sub_resource type="GDScript" id="GDScript_a4ogh"]
 resource_name = "mons_d1"
@@ -45,70 +42,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"mons_d1_idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7p25j"]
-atlas = ExtResource("3_74et0")
-region = Rect2(0, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vshle"]
-atlas = ExtResource("3_74et0")
-region = Rect2(120, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcol6"]
-atlas = ExtResource("3_74et0")
-region = Rect2(240, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4i7eb"]
-atlas = ExtResource("3_74et0")
-region = Rect2(360, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rom6o"]
-atlas = ExtResource("3_74et0")
-region = Rect2(480, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_trcdr"]
-atlas = ExtResource("3_74et0")
-region = Rect2(600, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0abcx"]
-atlas = ExtResource("3_74et0")
-region = Rect2(720, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htuuw"]
-atlas = ExtResource("3_74et0")
-region = Rect2(840, 0, 120, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_st1gq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7p25j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vshle")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kcol6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4i7eb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rom6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trcdr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0abcx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htuuw")
-}],
-"loop": true,
-"name": &"CoinIdle",
 "speed": 5.0
 }]
 
@@ -176,8 +109,11 @@ tile_data = PackedInt32Array(0, 786432, 66, 65536, 786432, 67, 1, 851968, 66, 65
 [sub_resource type="TileMapPattern" id="TileMapPattern_h8c0d"]
 tile_data = PackedInt32Array(0, 0, 16, 65536, 0, 17, 1, 65536, 16, 65537, 65536, 17)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ed5d"]
+load_path = "res://.godot/imported/terrain-v7.png-2bace6a93928ea00c06ec8e02adc388b.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2584w"]
-texture = ExtResource("8_h1sej")
+texture = SubResource("CompressedTexture2D_8ed5d")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -5898,7 +5834,7 @@ tile_data = PackedInt32Array(0, 1179648, 41, 65536, 1179648, 43, 1, 1310720, 41,
 tile_data = PackedInt32Array(0, 1245184, 39, 65536, 1245184, 40, 1, 1310720, 39, 65537, 1310720, 40)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvkvs"]
-texture = ExtResource("8_h1sej")
+texture = SubResource("CompressedTexture2D_8ed5d")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -7589,30 +7525,6 @@ position = Vector2(652, 332)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_52w0s")
 animation = &"mons_d1_idle"
-
-[node name="ScoreCoin1" type="StaticBody2D" parent="."]
-z_index = 3
-script = ExtResource("2_h7ksf")
-
-[node name="Coin" type="AnimatedSprite2D" parent="ScoreCoin1"]
-texture_filter = 1
-position = Vector2(456, 270)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
-
-[node name="ScoreCoin2" type="StaticBody2D" parent="."]
-z_index = 3
-script = ExtResource("2_h7ksf")
-
-[node name="Coin" type="AnimatedSprite2D" parent="ScoreCoin2"]
-texture_filter = 1
-position = Vector2(652, 270)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
 
 [node name="StartPointEz1" type="StaticBody2D" parent="."]
 z_index = 3

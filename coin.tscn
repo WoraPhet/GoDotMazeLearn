@@ -1,130 +1,67 @@
-[gd_scene load_steps=38 format=3 uid="uid://i7778i5xq2l8"]
+[gd_scene load_steps=17 format=3 uid="uid://i7778i5xq2l8"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_80ax1"]
-[ext_resource type="Texture2D" uid="uid://d085888mw1xec" path="res://Gold/Gold_1.png" id="1_vaa8m"]
-[ext_resource type="Texture2D" uid="uid://ce1wpmwx71ryn" path="res://Gold/Gold_2.png" id="2_hmqeb"]
-[ext_resource type="Texture2D" uid="uid://bbbms75o3v8bl" path="res://Gold/Gold_3.png" id="3_ab6a4"]
-[ext_resource type="Texture2D" uid="uid://beckyxr3x5yri" path="res://Gold/Gold_4.png" id="4_l7ufu"]
-[ext_resource type="Texture2D" uid="uid://b2b24cuw4xsu3" path="res://Gold/Gold_5.png" id="5_4iy75"]
-[ext_resource type="Texture2D" uid="uid://duag5yab5vi3b" path="res://Gold/Gold_6.png" id="6_5mc1e"]
-[ext_resource type="Texture2D" uid="uid://ldp3sgfowiio" path="res://Gold/Gold_7.png" id="7_jvsyn"]
-[ext_resource type="Texture2D" uid="uid://bkwl7amdbu3hp" path="res://Gold/Gold_8.png" id="8_fmfu2"]
-[ext_resource type="Texture2D" uid="uid://dgyx57111t5qf" path="res://Gold/Gold_9.png" id="9_ryt2j"]
-[ext_resource type="Texture2D" uid="uid://cw0qdtbp0hqp3" path="res://Gold/Gold_10.png" id="10_aom4c"]
-[ext_resource type="Texture2D" uid="uid://c71mwujklo2rk" path="res://Gold/Gold_11.png" id="11_j1w51"]
-[ext_resource type="Texture2D" uid="uid://dounyi0uiyvvp" path="res://Gold/Gold_12.png" id="12_7bp74"]
-[ext_resource type="Texture2D" uid="uid://bo81pmo451qr1" path="res://Gold/Gold_13.png" id="13_f0jpt"]
-[ext_resource type="Texture2D" uid="uid://doisx3arhmcpn" path="res://Gold/Gold_14.png" id="14_q5b4e"]
-[ext_resource type="Texture2D" uid="uid://boqt0tdvvw8tg" path="res://Gold/Gold_15.png" id="15_k6xml"]
-[ext_resource type="Texture2D" uid="uid://b1akfh7r6k5t6" path="res://Gold/Gold_16.png" id="16_87efr"]
-[ext_resource type="Texture2D" uid="uid://cxdnuhv1c22d8" path="res://Gold/Gold_17.png" id="17_xic0t"]
-[ext_resource type="Texture2D" uid="uid://bl560v3utwj1b" path="res://Gold/Gold_18.png" id="18_cfj7j"]
-[ext_resource type="Texture2D" uid="uid://df8fsl533q63e" path="res://Gold/Gold_19.png" id="19_do7bc"]
-[ext_resource type="Texture2D" uid="uid://dip1jf7c6j4am" path="res://Gold/Gold_20.png" id="20_evknf"]
-[ext_resource type="Texture2D" uid="uid://dbti2umimsfqk" path="res://Gold/Gold_21.png" id="21_gtr6m"]
-[ext_resource type="Texture2D" uid="uid://6n51mw2rxl4q" path="res://Gold/Gold_22.png" id="22_yyqps"]
-[ext_resource type="Texture2D" uid="uid://d2b0yun4rxygc" path="res://Gold/Gold_23.png" id="23_77swu"]
-[ext_resource type="Texture2D" uid="uid://diefp6caluoi1" path="res://Gold/Gold_24.png" id="24_afnh8"]
-[ext_resource type="Texture2D" uid="uid://2bm0rvxk3ddf" path="res://Gold/Gold_25.png" id="25_dofsd"]
-[ext_resource type="Texture2D" uid="uid://biq2lcf124kc" path="res://Gold/Gold_26.png" id="26_w1jhh"]
-[ext_resource type="Texture2D" uid="uid://crh70f8ttp5wf" path="res://Gold/Gold_27.png" id="27_4mcdo"]
-[ext_resource type="Texture2D" uid="uid://hexr67jtbdlb" path="res://Gold/Gold_28.png" id="28_iyff4"]
-[ext_resource type="Texture2D" uid="uid://c4bvcxknfh4on" path="res://Gold/Gold_29.png" id="29_yc2iv"]
-[ext_resource type="Texture2D" uid="uid://buchad5f58buy" path="res://Gold/Gold_30.png" id="30_hss11"]
+[ext_resource type="Texture2D" uid="uid://dhg0pi7hbhy5s" path="res://Objects/Score_coin.png" id="2_qb32e"]
 [ext_resource type="AudioStream" uid="uid://b17p08eodwg0c" path="res://ESM_Casino_Game_Coin_Sound_FX_Arcade_Kids_Mobile_App.wav" id="32_w3juq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q04eh"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suajo"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy2in"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6yqm"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb0y1"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hkf1"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xu8"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g735"]
+atlas = ExtResource("2_qb32e")
+region = Rect2(840, 0, 120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3gltp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vaa8m")
+"texture": SubResource("AtlasTexture_q04eh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hmqeb")
+"texture": SubResource("AtlasTexture_suajo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ab6a4")
+"texture": SubResource("AtlasTexture_sy2in")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_l7ufu")
+"texture": SubResource("AtlasTexture_c6yqm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_4iy75")
+"texture": SubResource("AtlasTexture_mb0y1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_5mc1e")
+"texture": SubResource("AtlasTexture_4hkf1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jvsyn")
+"texture": SubResource("AtlasTexture_o6xu8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_fmfu2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ryt2j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_aom4c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_j1w51")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_7bp74")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_f0jpt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_q5b4e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_k6xml")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_87efr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_xic0t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_cfj7j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_do7bc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_evknf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_gtr6m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_yyqps")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_77swu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_afnh8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_dofsd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_w1jhh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_4mcdo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_iyff4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_yc2iv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_hss11")
+"texture": SubResource("AtlasTexture_0g735")
 }],
 "loop": true,
 "name": &"default",
@@ -147,7 +84,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -500)]
+"values": [Vector2(0, 0), Vector2(0, -150)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -200,9 +137,10 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_80ax1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5.16667, 5.16667)
 sprite_frames = SubResource("SpriteFrames_3gltp")
 autoplay = "default"
-frame = 11
 frame_progress = 0.630056
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
