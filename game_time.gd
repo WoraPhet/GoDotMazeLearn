@@ -21,6 +21,9 @@ func game_time():
 		else:
 			$Timer.stop()
 			$timeStamp.hide()
+			#TODO Save score ลงไฟล์ด้วย
+			Global.score = 0
+			Global.score_minus = 0
 			#$timeStamp.visible = !$timeStamp.visible
 			get_tree().change_scene_to_file("res://game_over.tscn")
 func _on_timer_timeout():

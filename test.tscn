@@ -1,14 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://ifkoys3kmbtg"]
 
 [ext_resource type="Script" path="res://Test.gd" id="1_u2880"]
+[ext_resource type="PackedScene" path="res://easy_1_map.tscn" id="2_6i1mn"]
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="3_556lh"]
 [ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="4_66f0c"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="4_yy8ce"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="5_ooe6b"]
-[ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="6_xkpvq"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_u2880")
+
+[node name="Easy1" parent="." instance=ExtResource("2_6i1mn")]
 
 [node name="TextInput_move" parent="." instance=ExtResource("3_556lh")]
 offset_left = 96.0
@@ -23,6 +25,12 @@ scale = Vector2(0.516135, 0.5)
 [node name="Coin" parent="." instance=ExtResource("4_yy8ce")]
 position = Vector2(320, 184)
 
+[node name="Coin2" parent="." instance=ExtResource("4_yy8ce")]
+position = Vector2(320, 288)
+
+[node name="Coin3" parent="." instance=ExtResource("4_yy8ce")]
+position = Vector2(232, 288)
+
 [node name="HUD" parent="." instance=ExtResource("5_ooe6b")]
 
 [node name="Button" type="Button" parent="."]
@@ -31,11 +39,7 @@ offset_top = 120.0
 offset_right = 1024.0
 offset_bottom = 296.0
 
-[node name="pauseMenu" parent="." instance=ExtResource("6_xkpvq")]
-visible = false
-
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="pauseMenu/Continue" to="." method="_on_continue_pressed"]
 
-[editable path="pauseMenu"]
+[editable path="Coin"]
