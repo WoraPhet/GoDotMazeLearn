@@ -98,8 +98,20 @@ func _on_text_input_move_text_submitted(new_text):
 		
 		DfaSig.emit_signal("DFA_check","N")
 		
-	
+func pause():
+	get_tree().paused = true
+	$pauseMenu.show()
+
+func unpause():
+	get_tree().paused = false
+	$pauseMenu.hide()
 
 
 
+func _on_button_pressed():
+	print("inside pause ")
+	pause()
 
+
+func _on_continue_pressed():
+	unpause()
