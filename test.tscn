@@ -20,8 +20,15 @@ offset_right = 1153.0
 offset_bottom = 662.0
 
 [node name="Player" parent="." instance=ExtResource("4_66f0c")]
-position = Vector2(232, 184)
+z_index = 10
+position = Vector2(256, 448)
 scale = Vector2(0.516135, 0.5)
+
+[node name="Sprite2D" parent="Player" index="0"]
+position = Vector2(9.68741, 56)
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+visible = false
 
 [node name="Coin" parent="." instance=ExtResource("4_yy8ce")]
 position = Vector2(320, 184)
@@ -52,5 +59,6 @@ z_index = 10
 [connection signal="pressed" from="pauseMenu/Continue" to="." method="_on_continue_pressed"]
 
 [editable path="Easy1"]
+[editable path="Player"]
 [editable path="Coin"]
 [editable path="pauseMenu"]

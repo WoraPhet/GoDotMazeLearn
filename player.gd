@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var speed = 6600
-const PIXEL_SIZE = 111
+const PIXEL_SIZE = 65
 var can_walk = true
 var timer = null
 var step_delay = 2
@@ -21,7 +21,9 @@ func _on_timer_timeout():
 	can_walk = true
 
 func _physics_process(delta):
-	while !dfa_queue.is_empty() && can_walk:
+	if dfa_queue.is_empty():
+		animation.play("idle")
+	elif(!dfa_queue.is_empty() && can_walk):
 		var char = dfa_queue.pop_front()
 		print(dfa_queue)
 		if char == "R":
@@ -55,8 +57,8 @@ func _physics_process(delta):
 			#Global.score -= Global.score_minus
 			get_tree().change_scene_to_file("res://test.tscn")
 			
-		else:
-			animation.play("idle")
+		#else:
+		#	animation.play("idle")
 		move_and_slide()	
 		#Disable walk until timer's timeout complete
 		can_walk = false

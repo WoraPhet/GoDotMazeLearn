@@ -1,8 +1,8 @@
 extends Node
 
-var startTime = 30
+var startTime = 600
 var sec = startTime
-var minute = 0
+var minute = 1
 
 #func _on_button_pressed():
 #	$Timer.start()
@@ -12,12 +12,14 @@ func _ready():
 func game_time():
 	if sec > 0:
 		sec -= 1
-		$timeStamp.text = str(minute) + ":" + str(sec)
+		#$timeStamp.text = str(minute) + ":" + str(sec)
+		$timeStamp.text = str(sec) + " Secs"
 	else:
 		sec = startTime - 1
 		if minute > 0:
 			minute -= 1
-			$timeStamp.text = str(minute) + ":" + str(sec)
+			$timeStamp.text = str(sec) + " Secs"
+			#$timeStamp.text = str(minute) + ":" + str(sec)
 		else:
 			$Timer.stop()
 			$timeStamp.hide()

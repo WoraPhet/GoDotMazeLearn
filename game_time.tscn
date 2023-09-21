@@ -7,11 +7,12 @@
 script = ExtResource("1_7u20e")
 
 [node name="timeStamp" type="Label" parent="."]
-offset_left = 1176.0
+z_index = 10
+offset_left = 1148.0
 offset_top = 34.0
-offset_right = 1216.0
+offset_right = 1214.0
 offset_bottom = 60.0
-text = "0 : 0"
+text = "600 Secs"
 
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource("2_nlo1v")
