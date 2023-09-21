@@ -42,14 +42,6 @@ func _physics_process(delta):
 		elif char == "D":
 			position.y += PIXEL_SIZE
 			animation.play("Down")
-		elif char == "6":
-			animation.play("Right")
-		elif char == "4":
-			animation.play("Left")
-		elif char == "8":
-			animation.play("Up")
-		elif char == "2":
-			animation.play("Down")
 		elif char == "F":
 			GameTimeUI.sec = 0
 		elif char == "Z":

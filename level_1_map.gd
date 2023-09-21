@@ -86,6 +86,8 @@ class myDFA_L1:
 						DfaSig.emit_signal("DFA_check","U")
 						if(presentState.name == "trap"):
 							DfaSig.emit_signal("DFA_check","F")
+							DfaSig.emit_signal("DFA_check","")
+							DfaSig.emit_signal("DFA_check","")
 							break
 						#print("turn UP")
 						print(presentState.name)
@@ -98,6 +100,8 @@ class myDFA_L1:
 						DfaSig.emit_signal("DFA_check","R")
 						if(presentState.name == "trap"):
 							DfaSig.emit_signal("DFA_check","F")
+							DfaSig.emit_signal("DFA_check","")
+							DfaSig.emit_signal("DFA_check","")
 							break
 						#print("turn Right")
 						print(presentState.name)
@@ -111,6 +115,8 @@ class myDFA_L1:
 						DfaSig.emit_signal("DFA_check","D")
 						if(presentState.name == "trap"):
 							DfaSig.emit_signal("DFA_check","F")
+							DfaSig.emit_signal("DFA_check","")
+							DfaSig.emit_signal("DFA_check","")
 							break
 						#print("turn Down")
 						print(presentState.name)
@@ -123,6 +129,8 @@ class myDFA_L1:
 						DfaSig.emit_signal("DFA_check","L")
 						if(presentState.name == "trap"):
 							DfaSig.emit_signal("DFA_check","F")
+							DfaSig.emit_signal("DFA_check","")
+							DfaSig.emit_signal("DFA_check","")
 							break
 						#print("turn Left")
 						print(presentState.name)

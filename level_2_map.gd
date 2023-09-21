@@ -97,6 +97,11 @@ class myDFA_L1:
 				if (presentState.name != presentState.transition_inputU.name):
 					presentState = presentState.transition_inputU
 					DfaSig.emit_signal("DFA_check","U")
+					if(presentState.name == "trap"):
+						DfaSig.emit_signal("DFA_check","F")
+						DfaSig.emit_signal("DFA_check","")
+						DfaSig.emit_signal("DFA_check","")
+						break
 					#print("turn UP")
 					print(presentState.name)
 				else:
@@ -106,6 +111,11 @@ class myDFA_L1:
 				if (presentState.name != presentState.transition_inputR.name):
 					presentState = presentState.transition_inputR
 					DfaSig.emit_signal("DFA_check","R")
+					if(presentState.name == "trap"):
+						DfaSig.emit_signal("DFA_check","F")
+						DfaSig.emit_signal("DFA_check","")
+						DfaSig.emit_signal("DFA_check","")
+						break
 					#print("turn Right")
 					print(presentState.name)
 				else:
@@ -116,6 +126,11 @@ class myDFA_L1:
 				if (presentState.name != presentState.transition_inputD.name):
 					presentState = presentState.transition_inputD
 					DfaSig.emit_signal("DFA_check","D")
+					if(presentState.name == "trap"):
+						DfaSig.emit_signal("DFA_check","F")
+						DfaSig.emit_signal("DFA_check","")
+						DfaSig.emit_signal("DFA_check","")
+						break
 					#print("turn Down")
 					print(presentState.name)
 				else:
@@ -125,6 +140,11 @@ class myDFA_L1:
 				if (presentState.name != presentState.transition_inputL.name):
 					presentState = presentState.transition_inputL
 					DfaSig.emit_signal("DFA_check","L")
+					if(presentState.name == "trap"):
+						DfaSig.emit_signal("DFA_check","F")
+						DfaSig.emit_signal("DFA_check","")
+						DfaSig.emit_signal("DFA_check","")
+						break
 					#print("turn Left")
 					print(presentState.name)
 				else:
