@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 #var speed = 6600
-const PIXEL_SIZE = 65
+const PIXEL_SIZE = 64
 var can_walk = true
 #var timer = null
 #var step_delay = 2

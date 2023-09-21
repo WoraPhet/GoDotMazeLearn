@@ -8,6 +8,7 @@ bg_color = Color(0.211765, 0.211765, 0.211765, 0.584314)
 [sub_resource type="FontVariation" id="FontVariation_hxv6j"]
 
 [node name="HUD" type="Control"]
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 22.0

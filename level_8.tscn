@@ -1,12 +1,17 @@
-[gd_scene load_steps=36 format=3 uid="uid://uvkfxu7sf0rv"]
+[gd_scene load_steps=32 format=3 uid="uid://uvkfxu7sf0rv"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_8q88j"]
+[ext_resource type="Script" path="res://level_8_map.gd" id="1_ea44o"]
 [ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="2_g0ov2"]
-[ext_resource type="Texture2D" uid="uid://dhg0pi7hbhy5s" path="res://Objects/Score_coin.png" id="3_2ehpi"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_fgpv6"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_loe6k"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_askgd"]
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="7_x4h6n"]
+[ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_5i8l0"]
+[ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="10_2u8ln"]
+[ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="11_k77dk"]
+[ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="12_gb5sr"]
+[ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="13_u8xtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpspk"]
 texture = ExtResource("1_8q88j")
@@ -8668,70 +8673,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7356a"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(0, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdqen"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(120, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6ob8"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(240, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6ree"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(360, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tqin"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(480, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjlbp"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(600, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bga5b"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(720, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxped"]
-atlas = ExtResource("3_2ehpi")
-region = Rect2(840, 0, 120, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5db2i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7356a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdqen")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g6ob8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b6ree")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2tqin")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjlbp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bga5b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wxped")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_svhud"]
 atlas = ExtResource("5_loe6k")
 region = Rect2(0, 0, 32, 32)
@@ -8791,7 +8732,7 @@ animations = [{
 }]
 
 [node name="Medium3" type="Node2D"]
-visible = false
+script = ExtResource("1_ea44o")
 
 [node name="Medium3_mark" type="TileMap" parent="."]
 z_index = 2
@@ -8821,16 +8762,6 @@ sprite_frames = SubResource("SpriteFrames_7pycf")
 position = Vector2(864, 432)
 sprite_frames = SubResource("SpriteFrames_7pycf")
 
-[node name="Score_coin1" type="AnimatedSprite2D" parent="Objective_Med3"]
-position = Vector2(416, 239)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_5db2i")
-
-[node name="Score_coin2" type="AnimatedSprite2D" parent="Objective_Med3"]
-position = Vector2(800, 303)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_5db2i")
-
 [node name="StartPoint_Med3" type="StaticBody2D" parent="."]
 z_index = 3
 script = ExtResource("4_fgpv6")
@@ -8853,3 +8784,45 @@ position = Vector2(1121, 342)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_78bus")
 animation = &"Goal1Idle"
+
+[node name="TextInput_move" parent="." instance=ExtResource("9_5i8l0")]
+offset_left = 96.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 662.0
+placeholder_text = "UDLR"
+
+[node name="Player" parent="." instance=ExtResource("10_2u8ln")]
+z_index = 10
+position = Vector2(157, 365)
+scale = Vector2(0.516135, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Player" index="0"]
+position = Vector2(3.05176e-05, 58)
+
+[node name="Timer" parent="Player" index="4"]
+wait_time = 0.518
+
+[node name="HUD" parent="." instance=ExtResource("11_k77dk")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 935.0
+offset_top = 18.0
+offset_right = 1024.0
+offset_bottom = 76.0
+
+[node name="Coin5" parent="." instance=ExtResource("12_gb5sr")]
+position = Vector2(800, 319)
+
+[node name="Coin4" parent="." instance=ExtResource("12_gb5sr")]
+position = Vector2(415, 250)
+
+[node name="pauseMenu" parent="." instance=ExtResource("13_u8xtf")]
+visible = false
+z_index = 10
+
+[connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+
+[editable path="Player"]
+[editable path="pauseMenu"]

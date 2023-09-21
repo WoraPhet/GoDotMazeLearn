@@ -1,12 +1,17 @@
-[gd_scene load_steps=39 format=3 uid="uid://dvehm6nynqli5"]
+[gd_scene load_steps=35 format=3 uid="uid://dvehm6nynqli5"]
 
+[ext_resource type="Script" path="res://level_6_map.gd" id="1_eju4s"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="1_g1lyk"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="2_qb2vq"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="3_ijbb1"]
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="4_gj3l0"]
-[ext_resource type="Texture2D" uid="uid://dhg0pi7hbhy5s" path="res://Objects/Score_coin.png" id="5_3fnvg"]
 [ext_resource type="Texture2D" uid="uid://cp24p533jfsl3" path="res://Objects/Mons_d2.png" id="6_4ujnu"]
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="7_f1ce6"]
+[ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_elae2"]
+[ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="10_vvxg3"]
+[ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="11_iqrqj"]
+[ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="12_ih4vm"]
+[ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="13_43cb7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_kdpia"]
 tile_data = PackedInt32Array(0, 2359296, 14, 65536, 2359296, 15, 1, 2424832, 14, 65537, 2424832, 15)
@@ -8709,70 +8714,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7p25j"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(0, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vshle"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(120, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcol6"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(240, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4i7eb"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(360, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rom6o"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(480, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_trcdr"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(600, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0abcx"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(720, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htuuw"]
-atlas = ExtResource("5_3fnvg")
-region = Rect2(840, 0, 120, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_st1gq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7p25j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vshle")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kcol6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4i7eb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rom6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trcdr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0abcx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htuuw")
-}],
-"loop": true,
-"name": &"CoinIdle",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8pfd"]
 atlas = ExtResource("6_4ujnu")
 region = Rect2(0, 0, 32, 32)
@@ -8803,6 +8744,7 @@ animations = [{
 }]
 
 [node name="Medium1" type="Node2D"]
+script = ExtResource("1_eju4s")
 
 [node name="Medium1_mark" type="TileMap" parent="."]
 z_index = 2
@@ -8847,38 +8789,6 @@ animation = &"Goal1Idle"
 [node name="Objective_Med1" type="Node2D" parent="."]
 z_index = 3
 
-[node name="Coin" type="AnimatedSprite2D" parent="Objective_Med1"]
-texture_filter = 1
-position = Vector2(384, 482)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
-
-[node name="Coin2" type="AnimatedSprite2D" parent="Objective_Med1"]
-texture_filter = 1
-position = Vector2(643, 542)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
-
-[node name="Coin3" type="AnimatedSprite2D" parent="Objective_Med1"]
-texture_filter = 1
-position = Vector2(902, 543)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
-
-[node name="Coin4" type="AnimatedSprite2D" parent="Objective_Med1"]
-texture_filter = 1
-position = Vector2(1027, 480)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_st1gq")
-animation = &"CoinIdle"
-speed_scale = 2.0
-
 [node name="Mons_d2_1" type="AnimatedSprite2D" parent="Objective_Med1"]
 position = Vector2(384, 530)
 sprite_frames = SubResource("SpriteFrames_nk1o3")
@@ -8898,3 +8808,54 @@ animation = &"mons_d2_idle"
 position = Vector2(1024, 529)
 sprite_frames = SubResource("SpriteFrames_nk1o3")
 animation = &"mons_d2_idle"
+
+[node name="TextInput_move" parent="." instance=ExtResource("9_elae2")]
+offset_left = 96.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 662.0
+placeholder_text = "UDLR"
+
+[node name="Player" parent="." instance=ExtResource("10_vvxg3")]
+z_index = 10
+position = Vector2(191, 459)
+scale = Vector2(0.516135, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Player" index="0"]
+position = Vector2(3.05176e-05, 58)
+
+[node name="Timer" parent="Player" index="4"]
+wait_time = 0.518
+
+[node name="HUD" parent="." instance=ExtResource("11_iqrqj")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 935.0
+offset_top = 18.0
+offset_right = 1024.0
+offset_bottom = 76.0
+
+[node name="Coin5" parent="." instance=ExtResource("12_ih4vm")]
+position = Vector2(896, 541)
+
+[node name="Coin5" parent="Coin5" instance=ExtResource("12_ih4vm")]
+position = Vector2(643, 539)
+
+[node name="Coin6" parent="." instance=ExtResource("12_ih4vm")]
+position = Vector2(1024, 480)
+
+[node name="Coin5" parent="Coin6" instance=ExtResource("12_ih4vm")]
+position = Vector2(643, 539)
+
+[node name="Coin4" parent="." instance=ExtResource("12_ih4vm")]
+position = Vector2(386, 478)
+
+[node name="pauseMenu" parent="." instance=ExtResource("13_43cb7")]
+visible = false
+z_index = 10
+
+[connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+
+[editable path="Player"]
+[editable path="pauseMenu"]
