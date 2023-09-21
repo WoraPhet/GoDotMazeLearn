@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://duo78dps3sd4t"]
+[gd_scene load_steps=5 format=3 uid="uid://duo78dps3sd4t"]
 
+[ext_resource type="Script" path="res://game_over.gd" id="1_ohk3g"]
 [ext_resource type="PackedScene" uid="uid://curmfm2h1efkn" path="res://go_back_to_start_menu_btn.tscn" id="2_bc6qd"]
 [ext_resource type="PackedScene" uid="uid://bvfdfy0qgn0ul" path="res://score_board.tscn" id="2_bnlxv"]
 
 [sub_resource type="FontVariation" id="FontVariation_h6dhk"]
 
 [node name="GameOver" type="Node2D"]
+script = ExtResource("1_ohk3g")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

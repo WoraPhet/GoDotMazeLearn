@@ -1,16 +1,16 @@
 extends CharacterBody2D
 
 
-var speed = 6600
+#var speed = 6600
 const PIXEL_SIZE = 65
 var can_walk = true
-var timer = null
-var step_delay = 2
-var current_level = 1
+#var timer = null
+#var step_delay = 2
+
 var dfa_queue = []
-var accept_input_queue = []
-var defaultPosX = position.x
-var defaultPosY = position.y
+#var accept_input_queue = []
+#var defaultPosX = position.x
+#var defaultPosY = position.y
 
 @onready var animation =  $Sprite2D
 func _ready():
@@ -50,12 +50,15 @@ func _physics_process(delta):
 			animation.play("Up")
 		elif char == "2":
 			animation.play("Down")
+		elif char == "F":
+			GameTimeUI.sec = 0
 		elif char == "Z":
 			Global.score += Global.score_minus
-			get_tree().change_scene_to_file("res://level_"+ str(current_level+1) +".tscn")
+			Global.current_level += 1
+			get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
 		elif char == "N":
 			#Global.score -= Global.score_minus
-			get_tree().change_scene_to_file("res://test.tscn")
+			get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
 			
 		#else:
 		#	animation.play("idle")
@@ -65,7 +68,7 @@ func _physics_process(delta):
 		$Timer.start()
 		
 func _on_Player_screen_notifier_2d_screen_exited():
-	get_tree().change_scene_to_file("res://level_"+ str(current_level+1) +".tscn")
+	get_tree().change_scene_to_file("res://level_"+ str(Global.current_level+1) +".tscn")
 
 
 func _on_area_2d_2_body_entered(body):
