@@ -94,16 +94,16 @@ region = Rect2(57, 114, 57, 57)
 [sub_resource type="SpriteFrames" id="SpriteFrames_w2wen"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_abmgy")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4l328")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nmo35")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_40klf")
 }],
 "loop": true,
@@ -111,19 +111,19 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uslhh")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ieiyp")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1ibuy")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iln3u")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5b3pe")
 }],
 "loop": true,
@@ -131,19 +131,19 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_saeka")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i2kka")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_llunw")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_45q2x")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_f6xhq")
 }],
 "loop": true,
@@ -151,16 +151,16 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sjphs")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dv1xj")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oqhkn")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sv2th")
 }],
 "loop": true,
@@ -186,7 +186,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22dgl"]
-size = Vector2(90, 92)
+size = Vector2(90, 80)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ellh3"]
 bg_color = Color(0.556863, 0, 0.0745098, 1)
@@ -200,10 +200,10 @@ texture_filter = 1
 position = Vector2(0, 58)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_w2wen")
-animation = &"Up"
+animation = &"Left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 28)
+position = Vector2(1, 26)
 shape = SubResource("RectangleShape2D_22dgl")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -20,6 +20,7 @@ offset_left = 96.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 662.0
+placeholder_text = "UDLR"
 
 [node name="Player" parent="." instance=ExtResource("2_rh00f")]
 z_index = 10

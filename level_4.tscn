@@ -1,12 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://cxgx8djd42boc"]
+[gd_scene load_steps=37 format=3 uid="uid://cxgx8djd42boc"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_snf6k"]
-[ext_resource type="Texture2D" uid="uid://dhg0pi7hbhy5s" path="res://Objects/Score_coin.png" id="2_82ivk"]
+[ext_resource type="Script" path="res://level_4_map.gd" id="1_wd5jj"]
 [ext_resource type="Texture2D" uid="uid://cp24p533jfsl3" path="res://Objects/Mons_d2.png" id="3_7r8vt"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_338q7"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_68g7m"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_qr63o"]
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="7_aqcps"]
+[ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_2tw7u"]
+[ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="10_hdglm"]
+[ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="11_57flo"]
+[ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="12_ucbce"]
+[ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="13_6g4co"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuke0"]
 texture = ExtResource("1_snf6k")
@@ -7288,70 +7293,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5nea"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(0, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlat8"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(120, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uuhpr"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(240, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_crevl"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(360, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pv37l"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(480, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7oyhe"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(600, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_icran"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(720, 0, 120, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fb0ev"]
-atlas = ExtResource("2_82ivk")
-region = Rect2(840, 0, 120, 120)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6xx2t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x5nea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rlat8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uuhpr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_crevl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pv37l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7oyhe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icran")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fb0ev")
-}],
-"loop": true,
-"name": &"Coin_easy4",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvtf"]
 atlas = ExtResource("3_7r8vt")
 region = Rect2(0, 0, 32, 32)
@@ -7382,6 +7323,7 @@ animations = [{
 }]
 
 [node name="Easy4" type="Node2D"]
+script = ExtResource("1_wd5jj")
 
 [node name="Easy4_upper" type="TileMap" parent="."]
 z_index = 1
@@ -7433,27 +7375,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kutwa")
 animation = &"Goal_easy4"
 
-[node name="Coin_easy4" type="AnimatedSprite2D" parent="Objective_Ez4"]
-z_index = 2
-position = Vector2(479, 378)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_6xx2t")
-animation = &"Coin_easy4"
-
-[node name="Coin_easy5" type="AnimatedSprite2D" parent="Objective_Ez4"]
-z_index = 2
-position = Vector2(864, 445)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_6xx2t")
-animation = &"Coin_easy4"
-
-[node name="Coin_easy6" type="AnimatedSprite2D" parent="Objective_Ez4"]
-z_index = 2
-position = Vector2(608, 506)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_6xx2t")
-animation = &"Coin_easy4"
-
 [node name="Monster_easy4" type="AnimatedSprite2D" parent="Objective_Ez4"]
 z_index = 2
 position = Vector2(545, 499)
@@ -7465,3 +7386,48 @@ z_index = 2
 position = Vector2(801, 438)
 sprite_frames = SubResource("SpriteFrames_yknor")
 animation = &"Monster_easy4"
+
+[node name="TextInput_move" parent="." instance=ExtResource("9_2tw7u")]
+offset_left = 96.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 662.0
+placeholder_text = "UDLR"
+
+[node name="Player" parent="." instance=ExtResource("10_hdglm")]
+z_index = 10
+position = Vector2(414, 170)
+scale = Vector2(0.516135, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Player" index="0"]
+position = Vector2(3.05176e-05, 58)
+
+[node name="Timer" parent="Player" index="4"]
+wait_time = 0.518
+
+[node name="HUD" parent="." instance=ExtResource("11_57flo")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 935.0
+offset_top = 18.0
+offset_right = 1024.0
+offset_bottom = 76.0
+
+[node name="Coin3" parent="." instance=ExtResource("12_ucbce")]
+position = Vector2(607, 506)
+
+[node name="Coin5" parent="." instance=ExtResource("12_ucbce")]
+position = Vector2(864, 442)
+
+[node name="Coin4" parent="." instance=ExtResource("12_ucbce")]
+position = Vector2(478, 377)
+
+[node name="pauseMenu" parent="." instance=ExtResource("13_6g4co")]
+visible = false
+z_index = 10
+
+[connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+
+[editable path="Player"]
+[editable path="pauseMenu"]
