@@ -12,7 +12,6 @@ offset_left = 1134.0
 offset_top = 66.0
 offset_right = 1200.0
 offset_bottom = 92.0
-text = "600 Secs"
 
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource("2_nlo1v")

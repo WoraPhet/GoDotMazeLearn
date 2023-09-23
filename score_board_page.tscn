@@ -91,7 +91,8 @@ theme_override_fonts/font = ExtResource("4_m73g7")
 theme_override_font_sizes/font_size = 51
 text = "BACK"
 
-[connection signal="ready" from="." to="." method="_on_ready"]
+[node name="Node2D" type="Node2D" parent="."]
+
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/score" to="CanvasLayer" method="_on_score_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control2/Button" to="CanvasLayer" method="_on_button_pressed"]

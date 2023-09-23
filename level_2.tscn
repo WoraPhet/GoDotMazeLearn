@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://8vqkiq00s2ar"]
+[gd_scene load_steps=28 format=3 uid="uid://8vqkiq00s2ar"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_5hma2"]
 [ext_resource type="Script" path="res://level_2_map.gd" id="1_7cc0s"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="3_h2767"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="4_mnk7i"]
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="5_1ums3"]
-[ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="7_t8bm5"]
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_krxmp"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="12_ux1cq"]
 [ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="13_2oq60"]
@@ -7257,35 +7256,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u54rt"]
-atlas = ExtResource("7_t8bm5")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_47up3"]
-atlas = ExtResource("7_t8bm5")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvmnl"]
-atlas = ExtResource("7_t8bm5")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6r3qa"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u54rt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_47up3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fvmnl")
-}],
-"loop": true,
-"name": &"Monster_easy2",
-"speed": 5.0
-}]
-
 [node name="Easy2" type="Node2D"]
 script = ExtResource("1_7cc0s")
 
@@ -7323,14 +7293,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_palqh")
 animation = &"Goal1Idle"
 
-[node name="Objective_Ez2" type="Node2D" parent="."]
-
-[node name="Monster_easy2" type="AnimatedSprite2D" parent="Objective_Ez2"]
-z_index = 2
-position = Vector2(481, 238)
-sprite_frames = SubResource("SpriteFrames_6r3qa")
-animation = &"Monster_easy2"
-
 [node name="TextInput_move" parent="." instance=ExtResource("9_krxmp")]
 offset_left = 96.0
 offset_top = 568.0
@@ -7349,7 +7311,7 @@ position = Vector2(52.3119, 12)
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
 
-[node name="Timer" parent="Player" index="4"]
+[node name="Timer" parent="Player" index="3"]
 wait_time = 0.518
 
 [node name="HUD" parent="." instance=ExtResource("3_a6wpn")]

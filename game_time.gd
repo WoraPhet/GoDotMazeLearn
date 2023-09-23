@@ -1,6 +1,6 @@
 extends Node
 
-var startTime = 300
+var startTime = 601
 var sec = startTime
 
 #func _on_button_pressed():

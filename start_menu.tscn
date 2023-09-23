@@ -49,6 +49,7 @@ animations = [{
 }]
 
 [node name="MainMenu" type="Node2D"]
+z_index = 35
 script = ExtResource("1_63x5r")
 
 [node name="TextureRect" type="TextureRect" parent="."]
