@@ -1,5 +1,12 @@
-memee:   130
-pich:    999
-tot:     300
-
-
+memee: 130
+pich: 999
+tot: 300
+Petch: 0
+PETCH: 0
+Two: 0
+Air: 0
+Porn: 0
+Thai: 0
+Game: 0
+Ne: 0
+Non: 0

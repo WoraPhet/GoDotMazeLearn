@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyyej0hcekkf"
-path="res://.godot/imported/slime.png-9d614d234157d841fd715094a50092e8.ctex"
+uid="uid://bntwhhw71sh84"
+path="res://.godot/imported/Lava.jpg-50e790ea37b560ddd348b9ef57242f2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slime.png"
-dest_files=["res://.godot/imported/slime.png-9d614d234157d841fd715094a50092e8.ctex"]
+source_file="res://Lava.jpg"
+dest_files=["res://.godot/imported/Lava.jpg-50e790ea37b560ddd348b9ef57242f2e.ctex"]
 
 [params]
 

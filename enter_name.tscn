@@ -1,0 +1,278 @@
+[gd_scene load_steps=27 format=3 uid="uid://cqw4raed8inux"]
+
+[ext_resource type="Script" path="res://TxtName.gd" id="1_xn3f5"]
+[ext_resource type="Texture2D" uid="uid://c2ly0agxka8yp" path="res://Forest_mov.jpg" id="2_xdml1"]
+[ext_resource type="FontFile" uid="uid://denh4p24xkytx" path="res://PlayMeGames-Demo.otf" id="3_b1bvo"]
+[ext_resource type="Script" path="res://InputName.gd" id="4_4ck2j"]
+[ext_resource type="Script" path="res://SlimeOfName.gd" id="5_40qur"]
+[ext_resource type="Texture2D" uid="uid://bx4edfbjtscwp" path="res://slime_f.png" id="6_oqwvy"]
+
+[sub_resource type="GDScript" id="GDScript_kfykq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2eni7"]
+script = SubResource("GDScript_kfykq")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fs5xd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_be11m"]
+texture = SubResource("CanvasTexture_fs5xd")
+modulate_color = Color(0, 0.301961, 0.172549, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pp5o5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dmten"]
+texture = SubResource("CanvasTexture_pp5o5")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6biv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6ifc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmtvt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hvvei"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjwwk"]
+texture = SubResource("CanvasTexture_hvvei")
+modulate_color = Color(0.180392, 0.180392, 0.164706, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fes1j"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(285, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a7fo"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(228, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akxl7"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(171, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a57t5"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(114, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b5yj"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(57, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ueh"]
+atlas = ExtResource("6_oqwvy")
+region = Rect2(0, 228, 57, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arr5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fes1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a7fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akxl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a57t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b5yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ueh")
+}],
+"loop": true,
+"name": &"SlimeNameAnimation",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8e1um"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12je1"]
+
+[node name="EnterName" type="Node2D"]
+script = ExtResource("1_xn3f5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_xdml1")
+
+[node name="FrameName" type="PanelContainer" parent="TextureRect"]
+material = SubResource("ShaderMaterial_2eni7")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -230.0
+offset_right = 250.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_be11m")
+
+[node name="BoxInputName" type="PanelContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -140.0
+offset_right = 190.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dmten")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/BoxInputName"]
+layout_mode = 2
+
+[node name="InputName" type="LineEdit" parent="TextureRect/BoxInputName/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.301961, 0.172549, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0.301961, 0.172549, 0.976471)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g6biv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c6ifc")
+placeholder_text = " Enter Here"
+alignment = 1
+max_length = 20
+script = ExtResource("4_4ck2j")
+
+[node name="OkButton" type="Button" parent="TextureRect/BoxInputName/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0.301961, 0.172549, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.301961, 0.172549, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.301961, 0.172549, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.301961, 0.172549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vmtvt")
+text = "OK"
+flat = true
+
+[node name="TxtName" type="Label" parent="TextureRect"]
+layout_mode = 2
+offset_left = 553.0
+offset_top = 150.0
+offset_right = 719.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 70
+text = "Name"
+
+[node name="FrameHowToPlay" type="PanelContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -555.0
+offset_top = -330.0
+offset_right = 555.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wjwwk")
+
+[node name="TxtHowTo" type="Label" parent="TextureRect/FrameHowToPlay"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 32
+text = "How To Play
+U => Up
+D => Down
+L => Left
+R => Right
+You can fill it out only once. Collect Tokens to score points. Be careful of monster !!!"
+
+[node name="SlimeOfName" type="CharacterBody2D" parent="TextureRect"]
+texture_filter = 1
+script = ExtResource("5_40qur")
+
+[node name="SlimeName" type="AnimatedSprite2D" parent="TextureRect/SlimeOfName"]
+texture_filter = 1
+position = Vector2(844, 124)
+scale = Vector2(1.74561, 1.74561)
+sprite_frames = SubResource("SpriteFrames_arr5k")
+animation = &"SlimeNameAnimation"
+frame_progress = 0.270151
+
+[node name="BackButton" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -60.0
+offset_right = 114.0
+offset_bottom = -22.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8e1um")
+text = "Back"
+flat = true
+
+[node name="NextButton" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -68.0
+offset_right = -33.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_hover_color = Color(0.698039, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.905882, 0.635294, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_12je1")
+text = "Next"
+flat = true
+
+[connection signal="ready" from="TextureRect/BoxInputName/HBoxContainer" to="." method="_on_h_box_container_ready"]
+[connection signal="text_changed" from="TextureRect/BoxInputName/HBoxContainer/InputName" to="." method="_on_input_name_text_changed"]
+[connection signal="text_submitted" from="TextureRect/BoxInputName/HBoxContainer/InputName" to="." method="_on_input_name_text_submitted"]
+[connection signal="text_submitted" from="TextureRect/BoxInputName/HBoxContainer/InputName" to="TextureRect/BoxInputName/HBoxContainer/InputName" method="_on_text_submitted"]
+[connection signal="pressed" from="TextureRect/BoxInputName/HBoxContainer/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="ready" from="TextureRect/SlimeOfName" to="TextureRect/SlimeOfName" method="_on_ready"]
+[connection signal="animation_finished" from="TextureRect/SlimeOfName/SlimeName" to="TextureRect/SlimeOfName" method="_on_slime_name_animation_finished"]
+[connection signal="ready" from="TextureRect/SlimeOfName/SlimeName" to="TextureRect/SlimeOfName" method="_on_slime_name_ready"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TextureRect/NextButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/NextButton" to="." method="_on_next_button_pressed"]
