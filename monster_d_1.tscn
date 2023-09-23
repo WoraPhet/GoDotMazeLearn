@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://nk3ewg3vkcms"]
+
+[ext_resource type="Script" path="res://MonsterD1.gd" id="1_gyc8b"]
+[ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="2_xib5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iol4b"]
+atlas = ExtResource("2_xib5c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0117y"]
+atlas = ExtResource("2_xib5c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbvdk"]
+atlas = ExtResource("2_xib5c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekpqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iol4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0117y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbvdk")
+}],
+"loop": true,
+"name": &"mons_d1_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqayx"]
+radius = 24.0
+
+[node name="MonsterD1" type="Area2D"]
+z_index = 11
+script = ExtResource("1_gyc8b")
+
+[node name="Mons_d1" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ekpqk")
+animation = &"mons_d1_idle"
+autoplay = "mons_d1_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vqayx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

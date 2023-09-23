@@ -1,0 +1,51 @@
+1.slime
+--------------------------------------------------
+!!!หมายเหตุ!!!
+ในแต่ละ ความยากของด้าน จะมีระดับความยากของ monster 3 ระดับ
+-Easy (forest)
+-Medium (winter)
+-Hard (lava)
+
+ขอใช้ format ชื่อ file ตามด้านล่างนี้ครับ
+Monster_(ความยากด้าน*)_(ความยาก Monster**)_(f***)
+
+* ความยากของด้าน Easy, Medium, Hard
+ตามธีมของแต่ละด้าน ได้แก่ forest, winter, lava
+
+** d for difficulty
+     d1 = easy
+     d2 = medium
+     d3 = hard
+
+*** f for flip
+พลิกด้าน sprite เฉยๆ ครับ
+--------------------------------------------------
+2.Monster_Easy_d1
+3.Monster_Easy_d1_f
+
+4.Monster_Easy_d2
+5.Monster_Easy_d2_f
+
+6.Monster_Easy_d3
+7.Monster_Easy_d3_f
+
+8.Monster_Medium_d1
+9.Monster_Medium_d1_f
+
+10.Monster_Medium_d2
+11.Monster_Medium_d2_f
+
+12.Monster_Medium_d3
+13.Monster_Medium_d3_f
+
+14.Monster_Hard_d1
+15.Monster_Hard_d1_f
+
+16.Monster_Hard_d2
+17.Monster_Hard_d2_f
+
+18.Monster_Hard_d3
+19.Monster_Hard_d3_f
+
+20.Monster_Boss
+21.Monster_Boss_f

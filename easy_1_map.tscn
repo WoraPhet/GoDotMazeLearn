@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=3 uid="uid://dfw5cjcltjuy2"]
+[gd_scene load_steps=22 format=3 uid="uid://dfw5cjcltjuy2"]
 
-[ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="1_vjuax"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_a0hm5"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_v1ewu"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_3s353"]
@@ -7473,35 +7472,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iol4b"]
-atlas = ExtResource("1_vjuax")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0117y"]
-atlas = ExtResource("1_vjuax")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbvdk"]
-atlas = ExtResource("1_vjuax")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_52w0s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iol4b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0117y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bbvdk")
-}],
-"loop": true,
-"name": &"mons_d1_idle",
-"speed": 5.0
-}]
-
 [node name="Easy1" type="Node2D"]
 
 [node name="Easy1_mark" type="TileMap" parent="."]
@@ -7541,12 +7511,3 @@ position = Vector2(978, 224)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vaadr")
 animation = &"Goal1Idle"
-
-[node name="Objective_Ez1" type="Node2D" parent="."]
-z_index = 3
-
-[node name="Mons_d1" type="AnimatedSprite2D" parent="Objective_Ez1"]
-position = Vector2(652, 332)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_52w0s")
-animation = &"mons_d1_idle"

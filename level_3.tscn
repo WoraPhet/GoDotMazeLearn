@@ -7360,6 +7360,7 @@ visible = false
 z_index = 10
 
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="Player"]
 [editable path="pauseMenu"]

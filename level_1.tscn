@@ -1,23 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://ifkoys3kmbtg"]
+[gd_scene load_steps=10 format=3 uid="uid://ifkoys3kmbtg"]
 
-[ext_resource type="Script" path="res://Test.gd" id="1_7gwod"]
 [ext_resource type="PackedScene" uid="uid://dfw5cjcltjuy2" path="res://easy_1_map.tscn" id="2_4d7c0"]
 [ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="2_rh00f"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="3_apnct"]
 [ext_resource type="Script" path="res://level_1_map.gd" id="3_w4aqv"]
+[ext_resource type="PackedScene" uid="uid://24m2mi44bx2b" path="res://Easy_d1.tscn" id="4_u3qeq"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="6_fe0ih"]
 [ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="8_7kinx"]
+[ext_resource type="PackedScene" uid="uid://nk3ewg3vkcms" path="res://monster_d_1.tscn" id="9_5gph5"]
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_ct8vs"]
 
-[node name="Test" type="Node2D"]
-script = ExtResource("1_7gwod")
+[node name="TestGamMain" type="Node2D"]
 
 [node name="Easy1" parent="." instance=ExtResource("2_4d7c0")]
 script = ExtResource("3_w4aqv")
 
 [node name="pauseMenu" parent="Easy1" instance=ExtResource("8_7kinx")]
 visible = false
-z_index = 10
+z_index = 20
+
+[node name="Fasttyping" parent="Easy1/pauseMenu" instance=ExtResource("4_u3qeq")]
+z_index = 20
+position = Vector2(-7, 0)
+
+[node name="Player" parent="Easy1/pauseMenu/Fasttyping/mainBG" index="1"]
+script = null
+
+[node name="MonsterD1" parent="Easy1" instance=ExtResource("9_5gph5")]
+position = Vector2(650, 328)
 
 [node name="TextInput_move" parent="." instance=ExtResource("9_ct8vs")]
 offset_left = 96.0
@@ -48,19 +58,18 @@ visible = false
 [node name="Timer" parent="Player" index="4"]
 wait_time = 0.518
 
-[node name="Button" type="Button" parent="Player"]
-offset_left = 790.491
-offset_top = -656.0
-offset_right = 1150.49
-offset_bottom = -480.0
+[node name="Node" type="Node" parent="."]
 
+[connection signal="monster1Pause" from="Easy1" to="Easy1/pauseMenu/Fasttyping" method="_on_easy_1_monster_1_pause"]
 [connection signal="pressed" from="Easy1/pauseMenu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Easy1/pauseMenu/Continue" to="Easy1" method="_on_continue_pressed"]
+[connection signal="exitMonsterD1" from="Easy1/pauseMenu/Fasttyping" to="Easy1" method="_on_fasttyping_exit_monster_d_1"]
+[connection signal="body_entered" from="Easy1/MonsterD1" to="Easy1" method="_on_monster_d_1_body_entered"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="text_submitted" from="TextInput_move" to="Easy1" method="_on_text_input_move_text_submitted"]
-[connection signal="pressed" from="Player/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Player/Button" to="Easy1" method="_on_button_pressed"]
 
 [editable path="Easy1"]
 [editable path="Easy1/pauseMenu"]
+[editable path="Easy1/pauseMenu/Fasttyping"]
+[editable path="Coin2"]
 [editable path="Player"]
