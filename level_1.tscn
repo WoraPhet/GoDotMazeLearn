@@ -15,12 +15,24 @@ script = ExtResource("1_7gwod")
 [node name="Easy1" parent="." instance=ExtResource("2_4d7c0")]
 script = ExtResource("3_w4aqv")
 
+[node name="pauseMenu" parent="Easy1" instance=ExtResource("8_7kinx")]
+visible = false
+z_index = 10
+
 [node name="TextInput_move" parent="." instance=ExtResource("9_ct8vs")]
 offset_left = 96.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 662.0
 placeholder_text = "UDLR"
+
+[node name="HUD" parent="." instance=ExtResource("6_fe0ih")]
+
+[node name="Coin2" parent="." instance=ExtResource("3_apnct")]
+position = Vector2(651, 267)
+
+[node name="Coin3" parent="." instance=ExtResource("3_apnct")]
+position = Vector2(457, 267)
 
 [node name="Player" parent="." instance=ExtResource("2_rh00f")]
 z_index = 10
@@ -36,29 +48,19 @@ visible = false
 [node name="Timer" parent="Player" index="4"]
 wait_time = 0.518
 
-[node name="HUD" parent="." instance=ExtResource("6_fe0ih")]
+[node name="Button" type="Button" parent="Player"]
+offset_left = 790.491
+offset_top = -656.0
+offset_right = 1150.49
+offset_bottom = -480.0
 
-[node name="Button" type="Button" parent="."]
-offset_left = 664.0
-offset_top = 120.0
-offset_right = 1024.0
-offset_bottom = 296.0
-
-[node name="Coin2" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(651, 267)
-
-[node name="Coin3" parent="." instance=ExtResource("3_apnct")]
-position = Vector2(457, 267)
-
-[node name="pauseMenu" parent="." instance=ExtResource("8_7kinx")]
-visible = false
-z_index = 10
-
+[connection signal="pressed" from="Easy1/pauseMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Easy1/pauseMenu/Continue" to="Easy1" method="_on_continue_pressed"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="text_submitted" from="TextInput_move" to="Easy1" method="_on_text_input_move_text_submitted"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="pauseMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Player/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Player/Button" to="Easy1" method="_on_button_pressed"]
 
 [editable path="Easy1"]
+[editable path="Easy1/pauseMenu"]
 [editable path="Player"]
-[editable path="pauseMenu"]
