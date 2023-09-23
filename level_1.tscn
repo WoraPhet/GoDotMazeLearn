@@ -55,7 +55,7 @@ position = Vector2(9.68741, 56)
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
 
-[node name="Timer" parent="Player" index="4"]
+[node name="Timer" parent="Player" index="3"]
 wait_time = 0.518
 
 [node name="Node" type="Node" parent="."]
@@ -64,6 +64,7 @@ wait_time = 0.518
 [connection signal="pressed" from="Easy1/pauseMenu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Easy1/pauseMenu/Continue" to="Easy1" method="_on_continue_pressed"]
 [connection signal="exitMonsterD1" from="Easy1/pauseMenu/Fasttyping" to="Easy1" method="_on_fasttyping_exit_monster_d_1"]
+[connection signal="hp_decrease_sig" from="Easy1/pauseMenu/Fasttyping" to="HUD" method="_on_fasttyping_hp_decrease_sig"]
 [connection signal="body_entered" from="Easy1/MonsterD1" to="Easy1" method="_on_monster_d_1_body_entered"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="text_submitted" from="TextInput_move" to="Easy1" method="_on_text_input_move_text_submitted"]
@@ -71,5 +72,6 @@ wait_time = 0.518
 [editable path="Easy1"]
 [editable path="Easy1/pauseMenu"]
 [editable path="Easy1/pauseMenu/Fasttyping"]
+[editable path="HUD"]
 [editable path="Coin2"]
 [editable path="Player"]

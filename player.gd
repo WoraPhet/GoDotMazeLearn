@@ -8,6 +8,7 @@ var can_walk = true
 #var step_delay = 2
 
 var dfa_queue = []
+
 #var accept_input_queue = []
 #var defaultPosX = position.x
 #var defaultPosY = position.y
@@ -21,6 +22,8 @@ func _on_timer_timeout():
 	can_walk = true
 
 func _physics_process(delta):
+	if (Global.hp_global <= 0):
+		GameTimeUI.sec = 0
 	if dfa_queue.is_empty():
 		animation.play("idle")
 	elif(!dfa_queue.is_empty() && can_walk):
@@ -46,6 +49,10 @@ func _physics_process(delta):
 			GameTimeUI.sec = 0
 		elif char == "Z":
 			Global.score += Global.score_minus
+			if(Global.hp_global <= 100):
+				Global.hp_global += 20
+				if(Global.hp_global > 100):
+					Global.hp_global = 100
 			Global.current_level += 1
 			get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
 		elif char == "N":
@@ -62,12 +69,6 @@ func _physics_process(delta):
 func _on_Player_screen_notifier_2d_screen_exited():
 	get_tree().change_scene_to_file("res://level_"+ str(Global.current_level+1) +".tscn")
 
-
-func _on_area_2d_2_body_entered(body):
-	if body.name == "Player":
-		$ProgressBar.value -= 10
-	if $ProgressBar.value <= 0:
-		get_tree().change_scene_to_file("res://game_over.tscn")
 
 
 func DFA_check(text):

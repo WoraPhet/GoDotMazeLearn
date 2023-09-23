@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://baw2coy5u4qld"]
+[gd_scene load_steps=5 format=3 uid="uid://baw2coy5u4qld"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0yvh7"]
 
@@ -7,8 +7,11 @@ bg_color = Color(0.211765, 0.211765, 0.211765, 0.584314)
 
 [sub_resource type="FontVariation" id="FontVariation_hxv6j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob5ht"]
+bg_color = Color(0.556863, 0, 0.0745098, 1)
+
 [node name="HUD" type="Control"]
-z_index = 15
+z_index = 30
 layout_mode = 3
 anchors_preset = 0
 offset_left = 22.0
@@ -16,7 +19,6 @@ offset_top = 21.0
 offset_right = 62.0
 offset_bottom = 61.0
 script = ExtResource("1_0yvh7")
-metadata/_edit_group_ = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -32,3 +34,17 @@ offset_right = 70.0
 offset_bottom = 38.0
 theme_override_fonts/font = SubResource("FontVariation_hxv6j")
 text = "SCORE:"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 26.775
+anchor_top = 2.025
+anchor_right = 28.4
+anchor_bottom = 2.025
+offset_left = -48.0
+offset_top = -74.0
+offset_right = 48.0
+offset_bottom = -47.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ob5ht")
+metadata/_edit_use_anchors_ = true

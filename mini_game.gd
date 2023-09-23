@@ -7,6 +7,7 @@ var currCH:int = 1
 @onready var timer_text = timelabel.text
 var HP_zero = false
 signal exitMonsterD1
+signal hp_decrease_sig
 
 func  _ready()->void:
 	#promt.start()
@@ -56,6 +57,7 @@ func _process(float)->void:
 func _on_timer_timeout():
 	timer.stop()
 	print("timeout")
+	HPdecress()
 	emit_signal("exitMonsterD1")
 	#get_tree().change_scene_to_file("res://gametest.tscn")
 	
@@ -66,9 +68,9 @@ func gameover():
 	return
 
 func HPdecress():
-	if(HP_zero):
-		gameover()
-	return
+	Global.hp_global -= 10
+	emit_signal("hp_decrease_sig")
+	
 
 
 
