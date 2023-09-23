@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexjls2u4sqge"]
+
+[ext_resource type="PackedScene" uid="uid://curmfm2h1efkn" path="res://go_back_to_start_menu_btn.tscn" id="1_5twvm"]
+
+[node name="ScoreBoardPage" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 558.0
+offset_top = 150.0
+offset_right = 693.0
+offset_bottom = 176.0
+text = "Score Board Page"
+
+[node name="GoBack_ToStartMenu_BTN" parent="." instance=ExtResource("1_5twvm")]
+offset_left = 584.0
+offset_top = 552.0
+offset_right = 654.0
+offset_bottom = 583.0

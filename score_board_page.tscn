@@ -1,18 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://cexjls2u4sqge"]
+[gd_scene load_steps=5 format=3 uid="uid://df4rk1rk7h173"]
 
-[ext_resource type="PackedScene" uid="uid://curmfm2h1efkn" path="res://go_back_to_start_menu_btn.tscn" id="1_4aays"]
+[ext_resource type="Script" path="res://Node.gd" id="1_lkwdv"]
+[ext_resource type="Texture2D" uid="uid://b2pfx2otl7dah" path="res://assets/Home.png" id="2_p5brp"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="3_hcgay"]
+[ext_resource type="FontFile" uid="uid://b5sme0jamflem" path="res://Fonts/PlayMeGames-Demo.otf" id="4_m73g7"]
 
-[node name="ScoreBoardPage" type="Node2D"]
+[node name="Node" type="Node"]
+script = ExtResource("1_lkwdv")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 558.0
-offset_top = 150.0
-offset_right = 693.0
-offset_bottom = 176.0
-text = "Score Board Page"
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p5brp")
+expand_mode = 1
 
-[node name="GoBack_ToStartMenu_BTN" parent="." instance=ExtResource("1_4aays")]
-offset_left = 584.0
-offset_top = 552.0
-offset_right = 654.0
-offset_bottom = 583.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_hcgay")
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Main/CenterContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_m73g7")
+theme_override_font_sizes/font_size = 120
+text = "SCORE BOARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_m73g7")
+theme_override_font_sizes/font_size = 51
+text = "SCORE"
+
+[node name="score2" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_m73g7")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control2"]
+layout_mode = 2
+offset_left = 87.0
+offset_top = 603.0
+offset_right = 201.0
+offset_bottom = 655.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_m73g7")
+theme_override_font_sizes/font_size = 51
+text = "BACK"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/score" to="CanvasLayer" method="_on_score_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control2/Button" to="CanvasLayer" method="_on_button_pressed"]
