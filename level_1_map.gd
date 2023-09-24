@@ -2,6 +2,7 @@ extends Node2D
 signal monster1Pause
 func _ready():
 	TimeTriggerSig.emit_signal("start_timer","show")
+	Global.current_map_for_file = 1
 
 class node:
 	var name:String

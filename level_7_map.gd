@@ -1,6 +1,7 @@
 extends Node2D
 func _ready():
 	TimeTriggerSig.emit_signal("start_timer","show")
+	Global.current_map_for_file = 7
 
 class node:
 	var name:String

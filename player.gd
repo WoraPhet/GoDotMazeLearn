@@ -75,3 +75,5 @@ func DFA_check(text):
 	dfa_queue.append(text)
 	print(dfa_queue)
 	
+
+

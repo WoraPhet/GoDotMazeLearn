@@ -1,4 +1,5 @@
 extends Node2D
+signal monster1Pause
 func _ready():
 	TimeTriggerSig.emit_signal("start_timer","show")
 
@@ -189,19 +190,23 @@ func _on_text_input_move_text_submitted(new_text):
 		DfaSig.emit_signal("DFA_check","N")
 		
 func pause():
+	#$Fasttyping.show()
+	emit_signal("monster1Pause")
 	get_tree().paused = true
 	$pauseMenu.show()
 
 func unpause():
+	#$/root/TestGamMain/Fasttyping.hide()
 	get_tree().paused = false
 	$pauseMenu.hide()
 
 
+func _on_fasttyping_exit_monster_d_1():
+	unpause()
 
-func _on_button_pressed():
-	print("inside pause ")
+
+func _on_monster_4_2_body_entered(body):
 	pause()
 
-
-func _on_continue_pressed():
-	unpause()
+func _on_monster_4_1_body_entered(body):
+	pause()

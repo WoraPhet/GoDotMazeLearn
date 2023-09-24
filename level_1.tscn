@@ -72,6 +72,7 @@ wait_time = 0.518
 [editable path="Easy1"]
 [editable path="Easy1/pauseMenu"]
 [editable path="Easy1/pauseMenu/Fasttyping"]
+[editable path="Easy1/MonsterD1"]
 [editable path="HUD"]
 [editable path="Coin2"]
 [editable path="Player"]

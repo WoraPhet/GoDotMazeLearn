@@ -1,8 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://cxgx8djd42boc"]
+[gd_scene load_steps=36 format=3 uid="uid://cxgx8djd42boc"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_snf6k"]
 [ext_resource type="Script" path="res://level_4_map.gd" id="1_wd5jj"]
-[ext_resource type="Texture2D" uid="uid://cp24p533jfsl3" path="res://Objects/Mons_d2.png" id="3_7r8vt"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_338q7"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_68g7m"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_qr63o"]
@@ -10,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="9_2tw7u"]
 [ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="10_hdglm"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="11_57flo"]
+[ext_resource type="PackedScene" uid="uid://c02yqxav70xr7" path="res://MonsterD2.tscn" id="12_d8u2f"]
+[ext_resource type="PackedScene" uid="uid://da5bdwq1bpldd" path="res://Easy_d2.tscn" id="12_hgu28"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="12_ucbce"]
 [ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="13_6g4co"]
+[ext_resource type="Script" path="res://Enemy4.gd" id="13_i0xir"]
+[ext_resource type="Script" path="res://mini_game4.gd" id="13_kgurx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuke0"]
 texture = ExtResource("1_snf6k")
@@ -7293,35 +7296,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_njvtf"]
-atlas = ExtResource("3_7r8vt")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp7dj"]
-atlas = ExtResource("3_7r8vt")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n4pvo"]
-atlas = ExtResource("3_7r8vt")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yknor"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_njvtf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qp7dj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n4pvo")
-}],
-"loop": true,
-"name": &"Monster_easy4",
-"speed": 5.0
-}]
-
 [node name="Easy4" type="Node2D"]
 script = ExtResource("1_wd5jj")
 
@@ -7375,18 +7349,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kutwa")
 animation = &"Goal_easy4"
 
-[node name="Monster_easy4" type="AnimatedSprite2D" parent="Objective_Ez4"]
-z_index = 2
-position = Vector2(545, 499)
-sprite_frames = SubResource("SpriteFrames_yknor")
-animation = &"Monster_easy4"
-
-[node name="Monster_easy5" type="AnimatedSprite2D" parent="Objective_Ez4"]
-z_index = 2
-position = Vector2(801, 438)
-sprite_frames = SubResource("SpriteFrames_yknor")
-animation = &"Monster_easy4"
-
 [node name="TextInput_move" parent="." instance=ExtResource("9_2tw7u")]
 offset_left = 96.0
 offset_top = 568.0
@@ -7425,9 +7387,31 @@ position = Vector2(478, 377)
 
 [node name="pauseMenu" parent="." instance=ExtResource("13_6g4co")]
 visible = false
-z_index = 10
+z_index = 30
 
+[node name="Fasttyping" parent="pauseMenu" instance=ExtResource("12_hgu28")]
+script = ExtResource("13_kgurx")
+
+[node name="Enemy" parent="pauseMenu/Fasttyping/mainBG" index="0"]
+script = ExtResource("13_i0xir")
+
+[node name="Player" parent="pauseMenu/Fasttyping/mainBG" index="1"]
+script = null
+
+[node name="Monster4_2" parent="." instance=ExtResource("12_d8u2f")]
+position = Vector2(863, 316)
+
+[node name="Monster4_1" parent="." instance=ExtResource("12_d8u2f")]
+position = Vector2(545, 505)
+
+[connection signal="monster1Pause" from="." to="pauseMenu/Fasttyping" method="_on_easy_4_monster_1_pause"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+[connection signal="exitMonsterD1" from="pauseMenu/Fasttyping" to="." method="_on_fasttyping_exit_monster_d_1"]
+[connection signal="hp_decrease_sig" from="pauseMenu/Fasttyping" to="HUD" method="_on_fasttyping_hp_decrease_sig"]
+[connection signal="body_entered" from="Monster4_2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Monster4_2" to="." method="_on_monster_4_2_body_entered"]
+[connection signal="body_entered" from="Monster4_1" to="." method="_on_monster_4_1_body_entered"]
 
 [editable path="Player"]
 [editable path="pauseMenu"]
+[editable path="pauseMenu/Fasttyping"]
