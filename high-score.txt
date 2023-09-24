@@ -1,34 +1,6 @@
-TOt: 0
-Petch: 0
-Petch: 0
-: 0
-: 0
-AAA:0
-ABB:2
-:2
-Tot Pet:526
-imloss2:600
-:619
-qest:616
-pp:580
-ffff:4
-fffpppttt:0
-fghjk:0
-testloss:5
-testloss2:0
-:2
-st:0
-st:0
-st:0
-st:0
-st:0
-gmgmnfj:0
-gmgmnfj:0
-gmgmnfj:0
-gmgmnfj:0
-gmgmnfj:619
-gmgmnfj:0
-gmgmnfj:0
-:538
-:596
-asdasd:4
+Pich:10
+Two:0
+Tot:619
+Petch:550
+Mimi:450
+
