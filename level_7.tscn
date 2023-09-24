@@ -1,8 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://bocdlliwhqyeu"]
+[gd_scene load_steps=37 format=3 uid="uid://bocdlliwhqyeu"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_t48qe"]
 [ext_resource type="Script" path="res://level_7_map.gd" id="1_yqf6r"]
-[ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="2_oq3os"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="4_n2qwf"]
 [ext_resource type="Texture2D" uid="uid://cotwwf777dl1x" path="res://Objects/Start1.png" id="5_u67lv"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="6_ysagy"]
@@ -12,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="10_bufka"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="11_4swgk"]
 [ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="12_obw45"]
+[ext_resource type="Script" path="res://mini_game7.gd" id="13_ee008"]
+[ext_resource type="PackedScene" uid="uid://b4fjea18r3gnv" path="res://Medium_d1.tscn" id="13_hihl5"]
+[ext_resource type="Script" path="res://Enemy7.gd" id="14_3m1ek"]
+[ext_resource type="PackedScene" uid="uid://nk3ewg3vkcms" path="res://monster_d_1.tscn" id="15_bur85"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o2rp8"]
 tile_data = PackedInt32Array(0, 1966080, 106, 65536, 1966080, 107, 1, 2031616, 106, 65537, 2031616, 107)
@@ -8668,35 +8671,6 @@ sources/1 = SubResource("TileSetAtlasSource_7rnv2")
 pattern_0 = SubResource("TileMapPattern_oxqjp")
 pattern_1 = SubResource("TileMapPattern_21ejj")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_atq46"]
-atlas = ExtResource("2_oq3os")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f33ye"]
-atlas = ExtResource("2_oq3os")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n06r8"]
-atlas = ExtResource("2_oq3os")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8fnht"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atq46")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f33ye")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n06r8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_svhud"]
 atlas = ExtResource("5_u67lv")
 region = Rect2(0, 0, 32, 32)
@@ -8779,16 +8753,6 @@ layer_0/tile_data = PackedInt32Array(-65537, 262145, 17, -1, 262145, 17, 65535, 
 [node name="Objective_Med2" type="Node2D" parent="."]
 z_index = 3
 
-[node name="Mons_d1_1" type="AnimatedSprite2D" parent="Objective_Med2"]
-z_index = 3
-position = Vector2(320, 464)
-sprite_frames = SubResource("SpriteFrames_8fnht")
-
-[node name="Mons_d1_2" type="AnimatedSprite2D" parent="Objective_Med2"]
-z_index = 3
-position = Vector2(768, 400)
-sprite_frames = SubResource("SpriteFrames_8fnht")
-
 [node name="StartPoint_Med2" type="StaticBody2D" parent="."]
 z_index = 3
 script = ExtResource("4_n2qwf")
@@ -8830,13 +8794,6 @@ position = Vector2(3.05176e-05, 58)
 
 [node name="HUD" parent="." instance=ExtResource("10_bufka")]
 
-[node name="Button" type="Button" parent="."]
-z_index = 15
-offset_left = 935.0
-offset_top = 18.0
-offset_right = 1024.0
-offset_bottom = 76.0
-
 [node name="Coin3" parent="." instance=ExtResource("11_4swgk")]
 position = Vector2(576, 352)
 
@@ -8848,9 +8805,32 @@ position = Vector2(449, 225)
 
 [node name="pauseMenu" parent="." instance=ExtResource("12_obw45")]
 visible = false
-z_index = 10
+z_index = 30
 
+[node name="Fasttyping" parent="pauseMenu" instance=ExtResource("13_hihl5")]
+script = ExtResource("13_ee008")
+
+[node name="Enemy" parent="pauseMenu/Fasttyping/mainBG" index="0"]
+script = ExtResource("14_3m1ek")
+
+[node name="Player" parent="pauseMenu/Fasttyping/mainBG" index="1"]
+script = null
+
+[node name="MonsterD1" parent="." instance=ExtResource("15_bur85")]
+position = Vector2(768, 394)
+scale = Vector2(0.8, 0.8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="MonsterD1" index="1"]
+metadata/_edit_group_ = true
+
+[connection signal="monster1Pause" from="." to="pauseMenu/Fasttyping" method="_on_medium_2_monster_1_pause"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+[connection signal="exitMonsterD1" from="pauseMenu/Fasttyping" to="." method="_on_fasttyping_exit_monster_d_1"]
+[connection signal="hp_decrease_sig" from="pauseMenu/Fasttyping" to="HUD" method="_on_fasttyping_hp_decrease_sig"]
+[connection signal="body_entered" from="MonsterD1" to="." method="_on_monster_d_1_body_entered"]
 
 [editable path="Player"]
 [editable path="pauseMenu"]
+[editable path="pauseMenu/Fasttyping"]
+[editable path="MonsterD1"]

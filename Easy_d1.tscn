@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://24m2mi44bx2b"]
+[gd_scene load_steps=154 format=3 uid="uid://24m2mi44bx2b"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_8rosr"]
 [ext_resource type="Texture2D" uid="uid://4j5bb2oexaes" path="res://BG/Background/froest_Easy/Forest.webp" id="2_tbuqe"]
@@ -126,6 +126,7 @@
 [ext_resource type="Texture2D" uid="uid://ct3xelbtu3pxr" path="res://sprites/Characters/Monster_Easy_d1_f.png" id="124_3yxna"]
 [ext_resource type="FontFile" uid="uid://djttyepa4kbks" path="res://front/PlayMeGames-Demo.otf" id="124_fecuh"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="126_vnq2a"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="127_quyo1"]
 [ext_resource type="Script" path="res://Enemy.gd" id="131_anas8"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_2bpsa"]
@@ -649,7 +650,6 @@ scale = Vector2(8.20769, 6.68337)
 sprite_frames = SubResource("SpriteFrames_f62hv")
 animation = &"Player"
 autoplay = "Player"
-script = ExtResource("131_anas8")
 
 [node name="Time" type="RichTextLabel" parent="."]
 offset_left = 243.0
@@ -659,8 +659,8 @@ offset_bottom = 198.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(0.980392, 0.980392, 0.980392, 1)
 theme_override_colors/selection_color = Color(0.654902, 0.490196, 0, 1)
-theme_override_fonts/normal_font = ExtResource("124_fecuh")
-theme_override_font_sizes/normal_font_size = 60
+theme_override_fonts/normal_font = ExtResource("127_quyo1")
+theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "[center]Time[/center]"
 scroll_active = false

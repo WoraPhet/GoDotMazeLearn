@@ -17,14 +17,10 @@ script = ExtResource("3_w4aqv")
 
 [node name="pauseMenu" parent="Easy1" instance=ExtResource("8_7kinx")]
 visible = false
-z_index = 20
+z_index = 30
 
 [node name="Fasttyping" parent="Easy1/pauseMenu" instance=ExtResource("4_u3qeq")]
-z_index = 20
 position = Vector2(-7, 0)
-
-[node name="Player" parent="Easy1/pauseMenu/Fasttyping/mainBG" index="1"]
-script = null
 
 [node name="MonsterD1" parent="Easy1" instance=ExtResource("9_5gph5")]
 position = Vector2(650, 328)
@@ -34,7 +30,6 @@ offset_left = 96.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 662.0
-placeholder_text = "UDLR"
 
 [node name="HUD" parent="." instance=ExtResource("6_fe0ih")]
 

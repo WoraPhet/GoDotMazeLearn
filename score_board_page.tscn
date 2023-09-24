@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://df4rk1rk7h173"]
+[gd_scene load_steps=6 format=3 uid="uid://df4rk1rk7h173"]
 
 [ext_resource type="Script" path="res://Node.gd" id="1_lkwdv"]
 [ext_resource type="Texture2D" uid="uid://b2pfx2otl7dah" path="res://assets/Home.png" id="2_p5brp"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="3_hcgay"]
 [ext_resource type="FontFile" uid="uid://b5sme0jamflem" path="res://Fonts/PlayMeGames-Demo.otf" id="4_m73g7"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="5_gisc1"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_lkwdv")
@@ -64,12 +65,14 @@ text = "SCORE"
 
 [node name="score2" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_m73g7")
+theme_override_fonts/font = ExtResource("5_gisc1")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
 [node name="Name" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_gisc1")
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 2
 
 [node name="Control2" type="Control" parent="CanvasLayer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjm2x1tvsdy4a"]
 
-[ext_resource type="FontFile" uid="uid://lqwhua2pqkmh" path="res://Fonts/Inter-VariableFont_slnt,wght.ttf" id="1_jxyg0"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="1_olgpg"]
 [ext_resource type="Script" path="res://TextInput_Move.gd" id="2_4gig6"]
 
 [sub_resource type="Theme" id="Theme_dyo75"]
@@ -14,8 +14,9 @@ scale = Vector2(1.03227, 1)
 theme = SubResource("Theme_dyo75")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/selection_color = Color(0.607843, 0.443137, 0.137255, 1)
-theme_override_fonts/font = ExtResource("1_jxyg0")
-placeholder_text = "U, D, L, R"
+theme_override_fonts/font = ExtResource("1_olgpg")
+theme_override_font_sizes/font_size = 60
+placeholder_text = "UDLR"
 caret_blink = true
 script = ExtResource("2_4gig6")
 

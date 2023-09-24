@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 @export var blue:Color = Color("#000000") 
 @export var red:Color = Color("#fafafa") 
 @export var green:Color = Color("#639765") 
-@onready var promt = get_node("/root/Easy"+str(Global.current_level)+"/pauseMenu/Fasttyping/Promt")
+@onready var promt = get_node("/root/Medium"+str(Global.current_level-5)+"/pauseMenu/Fasttyping/Promt")
 @onready var promt_text = promt.text
 var hasRunReady = false
 var cpoutput = ""

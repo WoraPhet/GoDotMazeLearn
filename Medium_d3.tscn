@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://dl6jyulhw47kx"]
+[gd_scene load_steps=137 format=3 uid="uid://dl6jyulhw47kx"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_yta3i"]
 [ext_resource type="Texture2D" uid="uid://bd1of3p2t2ypo" path="res://BG/Background/DarkForest.png" id="2_5g6lc"]
@@ -92,6 +92,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8kpn7wfcphp" path="res://BG/Background/Ice_Medium/dd94f8b0-b016-40cb-9dc7-8d3a7905b785-7.jpg" id="90_yybq6"]
 [ext_resource type="Texture2D" uid="uid://bpgoynb8ycpdw" path="res://BG/Background/Ice_Medium/dd94f8b0-b016-40cb-9dc7-8d3a7905b785-8.jpg" id="91_sfvit"]
 [ext_resource type="Texture2D" uid="uid://bt5sgeulyfeb2" path="res://BG/Background/Ice_Medium/dd94f8b0-b016-40cb-9dc7-8d3a7905b785-9.jpg" id="92_oble5"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="98_bvgjv"]
 [ext_resource type="Texture2D" uid="uid://dh37wkvppuc7w" path="res://BG/Background/Ice_Easy/Ice.jpg" id="123_vtwxy"]
 [ext_resource type="Texture2D" uid="uid://col08c16tculd" path="res://sprites/Characters/Monster_Medium_d3_f.png" id="124_u6e55"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="125_7bdi0"]
@@ -656,8 +657,8 @@ offset_bottom = 211.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(0.980392, 0.980392, 0.980392, 1)
 theme_override_colors/selection_color = Color(0.654902, 0.490196, 0, 1)
-theme_override_fonts/normal_font = ExtResource("127_ly7ex")
-theme_override_font_sizes/normal_font_size = 60
+theme_override_fonts/normal_font = ExtResource("98_bvgjv")
+theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "[center]Time[/center]"
 scroll_active = false

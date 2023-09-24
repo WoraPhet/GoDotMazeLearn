@@ -2,9 +2,9 @@ extends Node2D
 var active_enemy = null
 var currCH:int = 1
 var current_map_for_file = 4
-@onready var timelabel = get_node("/root/Easy"+str(Global.current_level)+ "/pauseMenu/Fasttyping/Time")
-@onready var timer = get_node("/root/Easy"+str(Global.current_level)+ "/pauseMenu/Fasttyping/Timer")
-@onready var promt = get_node("/root/Easy"+str(Global.current_level)+ "/pauseMenu/Fasttyping/mainBG/Enemy")
+@onready var timelabel = get_node("/root/Medium"+str(Global.current_level-5)+ "/pauseMenu/Fasttyping/Time")
+@onready var timer = get_node("/root/Medium"+str(Global.current_level-5)+ "/pauseMenu/Fasttyping/Timer")
+@onready var promt = get_node("/root/Medium"+str(Global.current_level-5)+ "/pauseMenu/Fasttyping/mainBG/Enemy")
 @onready var timer_text = timelabel.text
 var HP_zero = false
 signal exitMonsterD1
@@ -96,5 +96,20 @@ func _on_monster_5_1_body_entered(body):
 
 
 func _on_medium_2_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_medium_3_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_medium_4_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_medium_5_monster_1_pause():
 	promt.start()
 	timer.start()

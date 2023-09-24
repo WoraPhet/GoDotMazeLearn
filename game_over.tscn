@@ -1,13 +1,159 @@
-[gd_scene load_steps=5 format=3 uid="uid://duo78dps3sd4t"]
+[gd_scene load_steps=26 format=3 uid="uid://duo78dps3sd4t"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_ohk3g"]
+[ext_resource type="Texture2D" uid="uid://dd0udklexaxfv" path="res://BG/Background/Hell.png" id="2_1vah2"]
 [ext_resource type="PackedScene" uid="uid://curmfm2h1efkn" path="res://go_back_to_start_menu_btn.tscn" id="2_bc6qd"]
 [ext_resource type="PackedScene" uid="uid://bvfdfy0qgn0ul" path="res://score_board.tscn" id="2_bnlxv"]
+[ext_resource type="Texture2D" uid="uid://bd20nbdk2h5o6" path="res://sprites/Characters/Monster_Hard_d1_f.png" id="3_d7bgb"]
+[ext_resource type="Texture2D" uid="uid://bx4edfbjtscwp" path="res://slime_f.png" id="4_58gef"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="5_gktvx"]
+[ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="8_n07h6"]
 
-[sub_resource type="FontVariation" id="FontVariation_h6dhk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0xm4"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwkmq"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lk1h"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdnae"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prh68"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eslf4"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(0, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0qiw"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(300, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh48i"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(600, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbbky"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(900, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lb3i"]
+atlas = ExtResource("3_d7bgb")
+region = Rect2(1200, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63dpg"]
+atlas = ExtResource("4_58gef")
+region = Rect2(285, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wywls"]
+atlas = ExtResource("4_58gef")
+region = Rect2(228, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71aol"]
+atlas = ExtResource("4_58gef")
+region = Rect2(171, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hrtu"]
+atlas = ExtResource("4_58gef")
+region = Rect2(114, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ftea"]
+atlas = ExtResource("4_58gef")
+region = Rect2(57, 228, 57, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvww5"]
+atlas = ExtResource("4_58gef")
+region = Rect2(0, 228, 57, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvl2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0xm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwkmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lk1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdnae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prh68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eslf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0qiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh48i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbbky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lb3i")
+}],
+"loop": true,
+"name": &"Enemy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63dpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wywls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71aol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hrtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ftea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvww5")
+}],
+"loop": false,
+"name": &"Player",
+"speed": 5.0
+}]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_ohk3g")
+
+[node name="mainBG" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = -134.0
+offset_right = 1082.0
+offset_bottom = 456.0
+scale = Vector2(1.19, 1.452)
+texture = ExtResource("2_1vah2")
+
+[node name="Player" type="AnimatedSprite2D" parent="mainBG"]
+texture_filter = 1
+position = Vector2(501.681, 541.322)
+scale = Vector2(3.08333, 2.29307)
+sprite_frames = SubResource("SpriteFrames_kvl2l")
+animation = &"Player"
+autoplay = "Player"
+frame = 5
+frame_progress = 1.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -17,24 +163,47 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 479.0
-offset_top = 289.0
-offset_right = 765.0
-offset_bottom = 361.0
-theme_override_fonts/font = SubResource("FontVariation_h6dhk")
-theme_override_font_sizes/font_size = 50
+offset_left = 492.0
+offset_top = 298.0
+offset_right = 788.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("5_gktvx")
+theme_override_font_sizes/font_size = 64
 text = "GAME OVER"
 
 [node name="ScoreBoard" parent="Control" instance=ExtResource("2_bnlxv")]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 430.0
-offset_right = 590.0
-offset_bottom = 461.0
+offset_left = 514.0
+offset_top = 442.0
+offset_right = 616.0
+offset_bottom = 473.0
+theme_override_fonts/font = ExtResource("5_gktvx")
 
 [node name="GoBack_ToStartMenu_BTN" parent="Control" instance=ExtResource("2_bc6qd")]
 layout_mode = 0
-offset_left = 659.0
-offset_top = 429.0
-offset_right = 729.0
-offset_bottom = 460.0
+offset_left = 685.0
+offset_top = 441.0
+offset_right = 755.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("5_gktvx")
+
+[node name="HUD" parent="." instance=ExtResource("8_n07h6")]
+
+[node name="Panel" parent="HUD" index="0"]
+offset_left = 508.0
+offset_top = 290.0
+offset_right = 678.0
+offset_bottom = 334.0
+
+[node name="Label" parent="HUD" index="1"]
+offset_left = 529.0
+offset_top = 357.0
+offset_right = 612.0
+offset_bottom = 388.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" parent="HUD" index="2"]
+visible = false
+
+[editable path="HUD"]
