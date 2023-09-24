@@ -7310,14 +7310,14 @@ position = Vector2(52.3119, 12)
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
 
+[node name="pauseMenu" parent="." instance=ExtResource("13_2oq60")]
+visible = false
+z_index = 20
+
 [node name="HUD" parent="." instance=ExtResource("3_a6wpn")]
 
 [node name="Coin3" parent="." instance=ExtResource("12_ux1cq")]
 position = Vector2(544, 495)
-
-[node name="pauseMenu" parent="." instance=ExtResource("13_2oq60")]
-visible = false
-z_index = 20
 
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="pressed" from="pauseMenu/Continue" to="." method="_on_continue_pressed"]

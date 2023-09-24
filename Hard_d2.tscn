@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://b4ayc6dwgn7xi"]
+[gd_scene load_steps=143 format=3 uid="uid://b4ayc6dwgn7xi"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_qmy88"]
 [ext_resource type="Texture2D" uid="uid://bd1of3p2t2ypo" path="res://BG/Background/DarkForest.png" id="2_xxbft"]
@@ -96,7 +96,6 @@
 [ext_resource type="Texture2D" uid="uid://i2e7hdhq8jum" path="res://sprites/Characters/Monster_Hard_d2_f.png" id="94_i88c0"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="95_ekxqg"]
 [ext_resource type="Script" path="res://Enemy.gd" id="96_m5vkf"]
-[ext_resource type="FontFile" uid="uid://djttyepa4kbks" path="res://front/PlayMeGames-Demo.otf" id="97_rfjny"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="98_76ybx"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_2bpsa"]
@@ -697,8 +696,8 @@ offset_bottom = 364.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_selected_color = Color(0.980392, 0.980392, 0.980392, 1)
 theme_override_colors/selection_color = Color(0.654902, 0.490196, 0, 1)
-theme_override_fonts/normal_font = ExtResource("97_rfjny")
-theme_override_font_sizes/normal_font_size = 80
+theme_override_fonts/normal_font = ExtResource("98_76ybx")
+theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]test[/center]"
 scroll_active = false

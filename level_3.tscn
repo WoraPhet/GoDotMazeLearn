@@ -7294,7 +7294,6 @@ offset_left = 96.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 662.0
-placeholder_text = "UDLR"
 
 [node name="Player" parent="." instance=ExtResource("2_xvjgp")]
 z_index = 10
@@ -7318,18 +7317,14 @@ position = Vector2(481, 187)
 
 [node name="pauseMenu" parent="." instance=ExtResource("13_a2n0d")]
 visible = false
-z_index = 10
+z_index = 30
 
 [node name="Fasttyping" parent="pauseMenu" instance=ExtResource("13_oa7ij")]
-z_index = 30
 position = Vector2(-3.99997, 65)
 script = ExtResource("14_ala3h")
 
 [node name="Enemy" parent="pauseMenu/Fasttyping/mainBG" index="0"]
 script = ExtResource("14_xcxtu")
-
-[node name="Player" parent="pauseMenu/Fasttyping/mainBG" index="1"]
-script = null
 
 [connection signal="monster1Pause" from="." to="pauseMenu/Fasttyping" method="_on_easy_3_monster_1_pause"]
 [connection signal="body_entered" from="MonsterD1" to="." method="_on_monster_d_1_body_entered"]

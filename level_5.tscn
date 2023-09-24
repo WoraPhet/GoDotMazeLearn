@@ -7289,7 +7289,6 @@ offset_left = 96.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 662.0
-placeholder_text = "UDLR"
 
 [node name="Player" parent="." instance=ExtResource("11_lkjc3")]
 z_index = 10
@@ -7310,7 +7309,7 @@ position = Vector2(480, 506)
 
 [node name="pauseMenu" parent="." instance=ExtResource("14_40tiw")]
 visible = false
-z_index = 10
+z_index = 30
 
 [node name="Fasttyping" parent="pauseMenu" instance=ExtResource("12_yj7o8")]
 z_index = 30

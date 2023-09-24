@@ -1,45 +1,45 @@
 extends Node2D
 
 var five_letter_words = [
-	"cheer", "pulse", "match", "pedal", "basil", "quest", "lives", "march", "sport", "flare",
-	"dance", "queen", "couch", "price", "nasal", "plush", "blues", "chain", "nanny", "hyena",
-	"Apple", "Bread", "Cloud", "Dance", "Earth", "Fruit", "Grape", "Horse", "Insect", "Juice",
-	"Knife", "Lemon", "Music", "Night", "Ocean", "Peach", "Quiet", "Rainy", "Snake", "Train",
-	"Umbra", "Viper", "Water", "Xenon", "Yearn", "Zebra", "Amber", "Black", "Coral", "Diver",
-	"Emote", "Flute", "Gloom", "Haste", "Jolly", "Karma", "Latch", "Mango", "Nymph", "Audio",
-	"Adore", "Audit", "Aroma", "Oread", "Urate", "Sauce", "Adieu", "Arise", "Louie", "Above",
-	"Acute", "Alive", "Alone", "Angry", "Aware", "Awful", "Basic", "Black", "Blind", "Brave",
-	"Brief", "Broad", "Brown", "Cheap", "Chief", "Civil", "Clean", "Clear", "Close", "Crazy",
-	"Daily", "Dirty", "Early", "Empty", "Equal", "Exact", "Extra", "Faint", "False", "Final"
+	"CHEER", "PULSE", "MATCH", "PEDAL", "BASIL", "QUEST", "LIVES", "MARCH", "SPORT", "FLARE",
+	"DANCE", "QUEEN", "COUCH", "PRICE", "NASAL", "PLUSH", "BLUES", "CHAIN", "NANNY", "HYENA",
+	"APPLE", "BREAD", "CLOUD", "DANCE", "EARTH", "FRUIT", "GRAPE", "HORSE", "INSECT", "JUICE",
+	"KNIFE", "LEMON", "MUSIC", "NIGHT", "OCEAN", "PEACH", "QUIET", "RAINY", "SNAKE", "TRAIN",
+	"UMBRA", "VIPER", "WATER", "XENON", "YEARN", "ZEBRA", "AMBER", "BLACK", "CORAL", "DIVER",
+	"EMOTE", "FLUTE", "GLOOM", "HASTE", "JOLLY", "KARMA", "LATCH", "MANGO", "NYMPH", "AUDIO",
+	"ADORE", "AUDIT", "AROMA", "OREAD", "URATE", "SAUCE", "ADIEU", "ARISE", "LOUIE", "ABOVE",
+	"ACUTE", "ALIVE", "ALONE", "ANGRY", "AWARE", "AWFUL", "BASIC", "BLACK", "BLIND", "BRAVE",
+	"BRIEF", "BROAD", "BROWN", "CHEAP", "CHIEF", "CIVIL", "CLEAN", "CLEAR", "CLOSE", "CRAZY",
+	"DAILY", "DIRTY", "EARLY", "EMPTY", "EQUAL", "EXACT", "EXTRA", "FAINT", "FALSE", "FINAL"
 ]
 
 var seven_letter_words = [
-	"Ability", "Absence", "Academy", "Account", "Accused", "Achieve", "Acquire", "Address", "Advance", "Adverse",
-	"Advised", "Adviser", "Backing", "Balance", "Banking", "Barrier", "Battery", "Bearing", "Beating", "Because",
-	"Bedroom", "Believe", "Cabinet", "Caliber", "Calling", "Capable", "Capital", "Captain", "Caption", "Capture",
-	"Careful", "Carrier", "Dealing", "Decided", "Decline", "Default", "Defence", "Deficit", "Deliver", "Eastern",
-	"Economy", "Edition", "Elderly", "Element", "Engaged", "Enhance", "Factory", "Faculty", "Failing", "Failure",
-	"Fashion", "General", "Greater", "Gallery", "Genuine", "Genetic", "However", "Himself", "History", "Holding",
-	"Helping", "Hundred", "Include", "Improve", "Involve", "Initial", "Justice", "Journal", "Journey", "Jointly",
-	"Kingdom", "Keeping", "Kitchen", "Knowing", "Machine", "Manager", "Natural", "Neither", "Network", "Neutral",
-	"Officer", "Outside", "Overall", "Passage", "Passing", "Qualify", "Railway", "Readily", "Reading", "Science",
-	"Section", "Traffic", "Trouble", "Teacher", "Unknown", "Unusual", "Yellows", "Waiting", "Walking", "Working"
+	"ABILITY", "ABSENCE", "ACADEMY", "ACCOUNT", "ACCUSED", "ACHIEVE", "ACQUIRE", "ADDRESS", "ADVANCE", "ADVERSE",
+	"ADVISED", "ADVISER", "BACKING", "BALANCE", "BANKING", "BARRIER", "BATTERY", "BEARING", "BEATING", "BECAUSE",
+	"BEDROOM", "BELIEVE", "CABINET", "CALIBER", "CALLING", "CAPABLE", "CAPITAL", "CAPTAIN", "CAPTION", "CAPTURE",
+	"CAREFUL", "CARRIER", "DEALING", "DECIDED", "DECLINE", "DEFAULT", "DEFENCE", "DEFICIT", "DELIVER", "EASTERN",
+	"ECONOMY", "EDITION", "ELDERLY", "ELEMENT", "ENGAGED", "ENHANCE", "FACTORY", "FACULTY", "FAILING", "FAILURE",
+	"FASHION", "GENERAL", "GREATER", "GALLERY", "GENUINE", "GENETIC", "HOWEVER", "HIMSELF", "HISTORY", "HOLDING",
+	"HELPING", "HUNDRED", "INCLUDE", "IMPROVE", "INVOLVE", "INITIAL", "JUSTICE", "JOURNAL", "JOURNEY", "JOINTLY",
+	"KINGDOM", "KEEPING", "KITCHEN", "KNOWING", "MACHINE", "MANAGER", "NATURAL", "NEITHER", "NETWORK", "NEUTRAL",
+	"OFFICER", "OUTSIDE", "OVERALL", "PASSAGE", "PASSING", "QUALIFY", "RAILWAY", "READILY", "READING", "SCIENCE",
+	"SECTION", "TRAFFIC", "TROUBLE", "TEACHER", "UNKNOWN", "UNUSUAL", "YELLOWS", "WAITING", "WALKING", "WORKING"
 ]
 
 var eleven_letter_words = [
-	"Actinometer", "Actinometry", "Actinomycin", "Actualistic", "Acumination", "Acupressure", "Acupuncture", "Babyishness",
-	"Bacchanalia", "Bacciferous", "Baccivorous", "Bachelordom", "Bachelorism", "Bacilliform", "Calligraphy", "Collocation",
-	"Complicated", "Cabbagehead", "Cabbagelike", "Cabbagetown", "Cackleberry", "Dacarbazine", "Dacryorrhea", "Dactylogram",
-	"Dactylology", "Dangleberry", "Daredevilry", "Elephantine", "Elephantoid", "Elicitation", "Eligibility", "Elimination",
-	"Eliminative", "Eliminatory", "Fabrication", "Facilitator", "Factorylike", "Gallerylike", "Gallimaufry", "Gallinacean",
-	"Gallowglass", "Habituation", "Habitudinal", "Haggadistic", "Ichnography", "Ichthyoidal", "Ichthyolite", "Kabbalistic",
-	"Kailyardism", "Kamelaukion", "Katamorphic", "Labefaction", "Labiodental", "Labradorite", "Labyrinthic", "Machicolate",
-	"Machination", "Machineable", "Naggingness", "Nameability", "Nannofossil", "Nanomachine", "Oarsmanship", "Obfuscation",
-	"Obfuscatory", "Paraselenic", "Parasensory", "Parasitical", "Quacksalver", "Quadraphony", "Quadrasonic", "Quadrennial",
-	"Radioactive", "Radiocarbon", "Radiocesium", "Reallotment", "Realpolitik", "Realterable", "Sacculation", "Sacramental",
-	"Sacrificial", "Sacrolumbar", "Saddlecloth", "Tachygraphy", "Taciturnity", "Taeniacidal", "Tagliatelle", "Temperament",
-	"Temperature", "Tempestuous", "Teletherapy", "Ulcerogenic", "Ulotrichous", "Ultraviolet", "Vacuolation", "Valentinite",
-	"Warrantable", "Whichsoever", "Zealousness", "Zestfulness"
+	"ACTINOMETER", "ACTINOMETRY", "ACTINOMYCIN", "ACTUALISTIC", "ACUMINATION", "ACUPRESSURE", "ACUPUNCTURE", "BABYISHNESS",
+	"BACCHANALIA", "BACCIFEROUS", "BACCIVOROUS", "BACHELORDOM", "BACHELORISM", "BACILLIFORM", "CALLIGRAPHY", "COLLOCATION",
+	"COMPLICATED", "CABBAGEHEAD", "CABBAGELIKE", "CABBAGETOWN", "CACKLEBERRY", "DACARBAZINE", "DACRYORRHEA", "DACTYLOGRAM",
+	"DACTYLOLOGY", "DANGLEBERRY", "DAREDEVILRY", "ELEPHANTINE", "ELEPHANTOID", "ELICITATION", "ELIGIBILITY", "ELIMINATION",
+	"ELIMINATIVE", "ELIMINATORY", "FABRICATION", "FACILITATOR", "FACTORYLIKE", "GALLERYLIKE", "GALLIMAUFRY", "GALLINACEAN",
+	"GALLOWGLASS", "HABITUATION", "HABITUDINAL", "HAGGADISTIC", "ICHNOGRAPHY", "ICHTHYOIDAL", "ICHTHYOLITE", "KABBALISTIC",
+	"KAILYARDISM", "KAMELAUKION", "KATAMORPHIC", "LABEFACTION", "LABIODENTAL", "LABRADORITE", "LABYRINTHIC", "MACHICOLATE",
+	"MACHINATION", "MACHINEABLE", "NAGGINGNESS", "NAMEABILITY", "NANNOFOSSIL", "NANOMACHINE", "OARSMANSHIP", "OBFUSCATION",
+	"OBFUSCATORY", "PARASELENIC", "PARASENSORY", "PARASITICAL", "QUACKSALVER", "QUADRAPHONY", "QUADRASONIC", "QUADRENNIAL",
+	"RADIOACTIVE", "RADIOCARBON", "RADIOCESIUM", "REALLOTMENT", "REALPOLITIK", "REALTERABLE", "SACCULATION", "SACRAMENTAL",
+	"SACRIFICIAL", "SACROLUMBAR", "SADDLECLOTH", "TACHYGRAPHY", "TACITURNITY", "TAENIACIDAL", "TAGLIATELLE", "TEMPERAMENT",
+	"TEMPERATURE", "TEMPESTUOUS", "TELETHERAPY", "ULCEROGENIC", "ULOTRICHOUS", "ULTRAVIOLET", "VACUOLATION", "VALENTINITE",
+	"WARRANTABLE", "WHICHSOEVER", "ZEALOUSNESS", "ZESTFULNESS"
 ]
 
 

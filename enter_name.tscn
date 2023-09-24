@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqw4raed8inux"]
+[gd_scene load_steps=28 format=3 uid="uid://cqw4raed8inux"]
 
 [ext_resource type="Script" path="res://TxtName.gd" id="1_xn3f5"]
 [ext_resource type="Texture2D" uid="uid://c2ly0agxka8yp" path="res://Forest_mov.jpg" id="2_xdml1"]
+[ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="3_6nl1m"]
 [ext_resource type="FontFile" uid="uid://denh4p24xkytx" path="res://PlayMeGames-Demo.otf" id="3_b1bvo"]
 [ext_resource type="Script" path="res://InputName.gd" id="4_4ck2j"]
 [ext_resource type="Script" path="res://SlimeOfName.gd" id="5_40qur"]
@@ -139,7 +140,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0.301961, 0.172549, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0.301961, 0.172549, 0.976471)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_b1bvo")
+theme_override_fonts/font = ExtResource("3_6nl1m")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g6biv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_c6ifc")
