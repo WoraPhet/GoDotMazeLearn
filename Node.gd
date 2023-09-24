@@ -34,3 +34,7 @@ func sort_score(a,b):
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://start_menu.tscn") #StartPage
+
+
+func _on_button_mouse_entered():
+	$"click-sound".play()

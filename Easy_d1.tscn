@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://24m2mi44bx2b"]
+[gd_scene load_steps=154 format=3 uid="uid://24m2mi44bx2b"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_8rosr"]
 [ext_resource type="Texture2D" uid="uid://4j5bb2oexaes" path="res://BG/Background/froest_Easy/Forest.webp" id="2_tbuqe"]
@@ -126,6 +126,7 @@
 [ext_resource type="Texture2D" uid="uid://ct3xelbtu3pxr" path="res://sprites/Characters/Monster_Easy_d1_f.png" id="124_3yxna"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="126_vnq2a"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="127_quyo1"]
+[ext_resource type="PackedScene" uid="uid://dl7c5f574tdi" path="res://bg_moster.tscn" id="128_nivt2"]
 [ext_resource type="Script" path="res://Enemy.gd" id="131_anas8"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_2bpsa"]
@@ -679,5 +680,8 @@ bbcode_enabled = true
 text = "[center]test[/center]"
 scroll_active = false
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("128_nivt2")]
+position = Vector2(248, 245)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

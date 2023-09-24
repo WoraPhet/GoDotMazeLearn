@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3gx4t56momsi"]
+
+[ext_resource type="AudioStream" uid="uid://dklc5it86lx8b" path="res://cruising-down-8bit-lane-159615.mp3" id="1_jcs8y"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_jcs8y")
+volume_db = -4.522
+pitch_scale = 1.35
+autoplay = true

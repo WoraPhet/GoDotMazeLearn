@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://cjdboyclls3rf"]
+[gd_scene load_steps=153 format=3 uid="uid://cjdboyclls3rf"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_8dant"]
 [ext_resource type="Texture2D" uid="uid://bp5k3sopuwfop" path="res://BG/Background/froest_hard/8b2c062d-7554-46c6-91fa-e215ebb5f8e5-0.png" id="2_c437a"]
@@ -127,6 +127,7 @@
 [ext_resource type="Script" path="res://Enemy.gd" id="125_wdnrp"]
 [ext_resource type="FontFile" uid="uid://djttyepa4kbks" path="res://front/PlayMeGames-Demo.otf" id="126_2od0f"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="126_en2fw"]
+[ext_resource type="PackedScene" uid="uid://dl7c5f574tdi" path="res://bg_moster.tscn" id="128_hmkit"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yxtew"]
 frames = 40
@@ -673,5 +674,7 @@ theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "[center]test[/center]"
 scroll_active = false
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("128_hmkit")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://dl6jyulhw47kx"]
+[gd_scene load_steps=138 format=3 uid="uid://dl6jyulhw47kx"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_yta3i"]
 [ext_resource type="Texture2D" uid="uid://bd1of3p2t2ypo" path="res://BG/Background/DarkForest.png" id="2_5g6lc"]
@@ -93,6 +93,7 @@
 [ext_resource type="Texture2D" uid="uid://bpgoynb8ycpdw" path="res://BG/Background/Ice_Medium/dd94f8b0-b016-40cb-9dc7-8d3a7905b785-8.jpg" id="91_sfvit"]
 [ext_resource type="Texture2D" uid="uid://bt5sgeulyfeb2" path="res://BG/Background/Ice_Medium/dd94f8b0-b016-40cb-9dc7-8d3a7905b785-9.jpg" id="92_oble5"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="98_bvgjv"]
+[ext_resource type="PackedScene" uid="uid://dl7c5f574tdi" path="res://bg_moster.tscn" id="99_j1bo7"]
 [ext_resource type="Texture2D" uid="uid://dh37wkvppuc7w" path="res://BG/Background/Ice_Easy/Ice.jpg" id="123_vtwxy"]
 [ext_resource type="Texture2D" uid="uid://col08c16tculd" path="res://sprites/Characters/Monster_Medium_d3_f.png" id="124_u6e55"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="125_7bdi0"]
@@ -662,5 +663,7 @@ theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "[center]Time[/center]"
 scroll_active = false
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("99_j1bo7")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

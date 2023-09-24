@@ -31,3 +31,11 @@ func _on_next_button_pressed():
 
 func _on_input_name_text_changed(new_text):
 	Global.nameSet = new_text
+
+
+func _on_back_button_mouse_entered():
+	$click_sound.play()
+
+
+func _on_next_button_mouse_entered():
+	$click_sound.play()

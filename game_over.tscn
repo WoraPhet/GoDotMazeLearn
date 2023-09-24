@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://duo78dps3sd4t"]
+[gd_scene load_steps=28 format=3 uid="uid://duo78dps3sd4t"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_ohk3g"]
 [ext_resource type="Texture2D" uid="uid://dd0udklexaxfv" path="res://BG/Background/Hell.png" id="2_1vah2"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="5_gktvx"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="8_n07h6"]
 [ext_resource type="Script" path="res://ScorePoint_final.gd" id="9_euqvw"]
+[ext_resource type="AudioStream" uid="uid://bff83glsb08j1" path="res://ESM_Modern_UI_Sound_Tonal_Classic_Game_Synth_Click.wav" id="10_tqlm4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s0xm4"]
 atlas = ExtResource("3_d7bgb")
@@ -207,5 +208,11 @@ vertical_alignment = 1
 
 [node name="ProgressBar" parent="HUD" index="2"]
 visible = false
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_tqlm4")
+
+[connection signal="mouse_entered" from="Control/ScoreBoard" to="." method="_on_score_board_mouse_entered"]
+[connection signal="mouse_entered" from="Control/GoBack_ToStartMenu_BTN" to="." method="_on_go_back_to_start_menu_btn_mouse_entered"]
 
 [editable path="HUD"]

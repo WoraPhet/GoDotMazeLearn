@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl7c5f574tdi"]
+
+[ext_resource type="AudioStream" uid="uid://cb864ru4bdbs1" path="res://chiptune-grooving-142242.mp3" id="1_cggg6"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_cggg6")
+pitch_scale = 1.45
+autoplay = true

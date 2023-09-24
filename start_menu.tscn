@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dre5rjint3qch"]
+[gd_scene load_steps=15 format=3 uid="uid://dre5rjint3qch"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_63x5r"]
 [ext_resource type="Texture2D" uid="uid://buvc85tx14y8k" path="res://Home.png" id="2_pbwhq"]
 [ext_resource type="FontFile" uid="uid://denh4p24xkytx" path="res://PlayMeGames-Demo.otf" id="3_2ro1a"]
 [ext_resource type="Script" path="res://LittleSlime.gd" id="4_sw0v4"]
 [ext_resource type="Texture2D" uid="uid://bx4edfbjtscwp" path="res://slime_f.png" id="5_j5rwm"]
+[ext_resource type="AudioStream" uid="uid://bff83glsb08j1" path="res://ESM_Modern_UI_Sound_Tonal_Classic_Game_Synth_Click.wav" id="6_7xylf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dals"]
 
@@ -177,8 +178,14 @@ scale = Vector2(2.4364, 2.4364)
 sprite_frames = SubResource("SpriteFrames_uksi6")
 animation = &"SlimeAni"
 
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7xylf")
+
+[connection signal="mouse_entered" from="TextureRect/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="TextureRect/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="TextureRect/Score" to="." method="_on_score_mouse_entered"]
 [connection signal="pressed" from="TextureRect/Score" to="." method="_on_score_pressed"]
+[connection signal="mouse_entered" from="TextureRect/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]
 [connection signal="animation_finished" from="LittleSlime/SlimeStand" to="LittleSlime" method="_on_slime_stand_animation_finished"]
 [connection signal="animation_looped" from="LittleSlime/SlimeStand" to="LittleSlime" method="_on_slime_stand_animation_looped"]

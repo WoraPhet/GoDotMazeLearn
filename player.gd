@@ -29,19 +29,23 @@ func _physics_process(delta):
 		var char = dfa_queue.pop_front()
 		print(dfa_queue)
 		if char == "R":
+			$AudioStreamPlayer2D.play()
 			position.x += PIXEL_SIZE
 			animation.play("Right")
 			get_node("Sprite2D").set_flip_h(false)#not flip
 			
 		elif char == "L":
+			$AudioStreamPlayer2D.play()
 			position.x -= PIXEL_SIZE
 			animation.play("Left")
 			get_node("Sprite2D").set_flip_h(true)#flip side
 			
 		elif  char == "U":
+			$AudioStreamPlayer2D.play()
 			position.y -= PIXEL_SIZE
 			animation.play("Up")
 		elif char == "D":
+			$AudioStreamPlayer2D.play()
 			position.y += PIXEL_SIZE
 			animation.play("Down")
 		elif char == "F":

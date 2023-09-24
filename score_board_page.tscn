@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://df4rk1rk7h173"]
+[gd_scene load_steps=7 format=3 uid="uid://df4rk1rk7h173"]
 
 [ext_resource type="Script" path="res://Node.gd" id="1_lkwdv"]
 [ext_resource type="Texture2D" uid="uid://b2pfx2otl7dah" path="res://assets/Home.png" id="2_p5brp"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="3_hcgay"]
 [ext_resource type="FontFile" uid="uid://b5sme0jamflem" path="res://Fonts/PlayMeGames-Demo.otf" id="4_m73g7"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="5_gisc1"]
+[ext_resource type="AudioStream" uid="uid://bff83glsb08j1" path="res://ESM_Modern_UI_Sound_Tonal_Classic_Game_Synth_Click.wav" id="6_hf1s5"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_lkwdv")
@@ -97,6 +98,10 @@ text = "BACK"
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[node name="click-sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hf1s5")
+
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/score" to="CanvasLayer" method="_on_score_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Control2/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Control2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control2/Button" to="CanvasLayer" method="_on_button_pressed"]

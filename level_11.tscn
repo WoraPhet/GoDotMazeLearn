@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv5ram2suhbuq"]
+[gd_scene load_steps=14 format=3 uid="uid://cv5ram2suhbuq"]
 
+[ext_resource type="Script" path="res://level_11.gd" id="1_0ec3n"]
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_xr257"]
 [ext_resource type="PackedScene" uid="uid://bvfdfy0qgn0ul" path="res://score_board.tscn" id="2_lmp2k"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="3_lm56r"]
@@ -7,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://b5sme0jamflem" path="res://Fonts/PlayMeGames-Demo.otf" id="4_ehipx"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="5_fcrtw"]
 [ext_resource type="Script" path="res://ScorePoint_final.gd" id="7_vf36a"]
+[ext_resource type="AudioStream" uid="uid://bff83glsb08j1" path="res://ESM_Modern_UI_Sound_Tonal_Classic_Game_Synth_Click.wav" id="9_tcv38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ae8"]
 texture = ExtResource("1_xr257")
@@ -1474,6 +1476,7 @@ font_color = Color(1, 0.85098, 0.145098, 1)
 
 [node name="Winner" type="Node2D"]
 z_index = 51
+script = ExtResource("1_0ec3n")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d5cbf")
@@ -1523,5 +1526,11 @@ offset_bottom = 328.0
 
 [node name="ProgressBar" parent="HUD" index="2"]
 visible = false
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_tcv38")
+
+[connection signal="mouse_entered" from="ScoreBoard" to="." method="_on_score_board_mouse_entered"]
+[connection signal="mouse_entered" from="GoBack_ToStartMenu_BTN" to="." method="_on_go_back_to_start_menu_btn_mouse_entered"]
 
 [editable path="HUD"]

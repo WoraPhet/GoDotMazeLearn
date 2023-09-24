@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cqw4raed8inux"]
+[gd_scene load_steps=29 format=3 uid="uid://cqw4raed8inux"]
 
 [ext_resource type="Script" path="res://TxtName.gd" id="1_xn3f5"]
 [ext_resource type="Texture2D" uid="uid://c2ly0agxka8yp" path="res://Forest_mov.jpg" id="2_xdml1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://InputName.gd" id="4_4ck2j"]
 [ext_resource type="Script" path="res://SlimeOfName.gd" id="5_40qur"]
 [ext_resource type="Texture2D" uid="uid://bx4edfbjtscwp" path="res://slime_f.png" id="6_oqwvy"]
+[ext_resource type="AudioStream" uid="uid://bff83glsb08j1" path="res://ESM_Modern_UI_Sound_Tonal_Classic_Game_Synth_Click.wav" id="8_k4cht"]
 
 [sub_resource type="GDScript" id="GDScript_kfykq"]
 
@@ -266,6 +267,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_12je1")
 text = "Next"
 flat = true
 
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_k4cht")
+
 [connection signal="ready" from="TextureRect/BoxInputName/HBoxContainer" to="." method="_on_h_box_container_ready"]
 [connection signal="text_changed" from="TextureRect/BoxInputName/HBoxContainer/InputName" to="." method="_on_input_name_text_changed"]
 [connection signal="text_submitted" from="TextureRect/BoxInputName/HBoxContainer/InputName" to="." method="_on_input_name_text_submitted"]
@@ -274,7 +278,9 @@ flat = true
 [connection signal="ready" from="TextureRect/SlimeOfName" to="TextureRect/SlimeOfName" method="_on_ready"]
 [connection signal="animation_finished" from="TextureRect/SlimeOfName/SlimeName" to="TextureRect/SlimeOfName" method="_on_slime_name_animation_finished"]
 [connection signal="ready" from="TextureRect/SlimeOfName/SlimeName" to="TextureRect/SlimeOfName" method="_on_slime_name_ready"]
+[connection signal="mouse_entered" from="TextureRect/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="TextureRect/NextButton" to="." method="_on_next_button_mouse_entered"]
 [connection signal="pressed" from="TextureRect/NextButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/NextButton" to="." method="_on_next_button_pressed"]

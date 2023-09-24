@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://da5bdwq1bpldd"]
+[gd_scene load_steps=152 format=3 uid="uid://da5bdwq1bpldd"]
 
 [ext_resource type="Script" path="res://mini_game.gd" id="1_ls62h"]
 [ext_resource type="Texture2D" uid="uid://bd1of3p2t2ypo" path="res://BG/Background/DarkForest.png" id="2_v8ma5"]
@@ -127,6 +127,7 @@
 [ext_resource type="Script" path="res://Enemy.gd" id="125_mmsvm"]
 [ext_resource type="Texture2D" uid="uid://1ctl832a6ch4" path="res://sprites/Characters/slime.png" id="126_e4c2u"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="127_idadu"]
+[ext_resource type="PackedScene" uid="uid://dl7c5f574tdi" path="res://bg_moster.tscn" id="128_hyb6s"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_2bpsa"]
 frames = 50
@@ -664,5 +665,7 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]test[/center]"
 scroll_active = false
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("128_hyb6s")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
