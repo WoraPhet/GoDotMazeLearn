@@ -4,3 +4,4 @@ Tot:619
 Petch:550
 Mimi:450
 
+Phet:13

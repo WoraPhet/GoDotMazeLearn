@@ -119,7 +119,7 @@ class myDFA_L1:
 		q27.setTransition(q27, q28, q26, trap)
 		q28.setTransition(q27, q29, q28, q32)
 		q29.setTransition(q28, q29, q30, q29)
-		q30.setTransition(q30, q30, q31_item, q20)
+		q30.setTransition(q30, q30, q31_item, q29)
 		q31_item.setTransition(q31_item, q31_item, trap, q30)
 		q32.setTransition(trap, q32, q28, q33)
 		q33.setTransition(q33, q41, q32, q34)
