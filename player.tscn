@@ -207,6 +207,7 @@ shape = SubResource("RectangleShape2D_22dgl")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 0.1
 one_shot = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_Player_screen_notifier_2d_screen_exited"]

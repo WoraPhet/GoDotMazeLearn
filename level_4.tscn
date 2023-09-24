@@ -7365,9 +7365,6 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" parent="Player" index="0"]
 position = Vector2(3.05176e-05, 58)
 
-[node name="Timer" parent="Player" index="3"]
-wait_time = 0.518
-
 [node name="HUD" parent="." instance=ExtResource("11_57flo")]
 
 [node name="Button" type="Button" parent="."]
@@ -7401,16 +7398,11 @@ script = null
 [node name="Monster4_2" parent="." instance=ExtResource("12_d8u2f")]
 position = Vector2(863, 316)
 
-[node name="Monster4_1" parent="." instance=ExtResource("12_d8u2f")]
-position = Vector2(545, 505)
-
 [connection signal="monster1Pause" from="." to="pauseMenu/Fasttyping" method="_on_easy_4_monster_1_pause"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
 [connection signal="exitMonsterD1" from="pauseMenu/Fasttyping" to="." method="_on_fasttyping_exit_monster_d_1"]
 [connection signal="hp_decrease_sig" from="pauseMenu/Fasttyping" to="HUD" method="_on_fasttyping_hp_decrease_sig"]
-[connection signal="body_entered" from="Monster4_2" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Monster4_2" to="." method="_on_monster_4_2_body_entered"]
-[connection signal="body_entered" from="Monster4_1" to="." method="_on_monster_4_1_body_entered"]
 
 [editable path="Player"]
 [editable path="pauseMenu"]

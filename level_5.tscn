@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dkhqawn0mh3jm"]
+[gd_scene load_steps=28 format=3 uid="uid://dkhqawn0mh3jm"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_n6p5y"]
 [ext_resource type="Script" path="res://level_5_map.gd" id="1_u6wsv"]
@@ -6,13 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://dkmcdwiqo4f8k" path="res://Objects/Goal1.png" id="5_7fb7h"]
 [ext_resource type="Script" path="res://StartPoint.gd" id="5_rkeh4"]
 [ext_resource type="Script" path="res://GoalPoint.gd" id="7_58k4r"]
-[ext_resource type="Texture2D" uid="uid://dderf1kasu4r0" path="res://Objects/Mons_d1.png" id="7_ue2vt"]
-[ext_resource type="Texture2D" uid="uid://hspf23assp7c" path="res://Objects/Mons_d3.png" id="8_j1v1d"]
 [ext_resource type="PackedScene" uid="uid://bjm2x1tvsdy4a" path="res://TextInput_Move.tscn" id="10_ygc86"]
 [ext_resource type="PackedScene" uid="uid://m7wfoofo1pe0" path="res://player.tscn" id="11_lkjc3"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="12_xcagy"]
+[ext_resource type="PackedScene" uid="uid://da5bdwq1bpldd" path="res://Easy_d2.tscn" id="12_yj7o8"]
+[ext_resource type="PackedScene" uid="uid://c02yqxav70xr7" path="res://MonsterD2.tscn" id="13_l3hos"]
 [ext_resource type="PackedScene" uid="uid://i7778i5xq2l8" path="res://coin.tscn" id="13_rspht"]
+[ext_resource type="Script" path="res://mini_game4.gd" id="13_vnkg3"]
 [ext_resource type="PackedScene" uid="uid://b1kx17ssy55vl" path="res://pause_menu.tscn" id="14_40tiw"]
+[ext_resource type="Script" path="res://Enemy4.gd" id="14_utgsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4jw3"]
 texture = ExtResource("1_n6p5y")
@@ -7242,64 +7244,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1d4yk"]
-atlas = ExtResource("7_ue2vt")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v32mo"]
-atlas = ExtResource("7_ue2vt")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e37gk"]
-atlas = ExtResource("7_ue2vt")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vkvfm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1d4yk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v32mo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e37gk")
-}],
-"loop": true,
-"name": &"Monster_easy5_1",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aip3b"]
-atlas = ExtResource("8_j1v1d")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_atxvs"]
-atlas = ExtResource("8_j1v1d")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kt76g"]
-atlas = ExtResource("8_j1v1d")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wx1up"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aip3b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atxvs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kt76g")
-}],
-"loop": true,
-"name": &"Monster_easy5_2",
-"speed": 5.0
-}]
-
 [node name="Easy5" type="Node2D"]
 script = ExtResource("1_u6wsv")
 
@@ -7340,18 +7284,6 @@ animation = &"Goal1Idle"
 [node name="Objective_Ez5" type="Node2D" parent="."]
 z_index = 3
 
-[node name="Monster_d1_1" type="AnimatedSprite2D" parent="Objective_Ez5"]
-z_index = 2
-position = Vector2(480, 442)
-sprite_frames = SubResource("SpriteFrames_vkvfm")
-animation = &"Monster_easy5_1"
-
-[node name="Monster_d3_1" type="AnimatedSprite2D" parent="Objective_Ez5"]
-z_index = 2
-position = Vector2(673, 442)
-sprite_frames = SubResource("SpriteFrames_wx1up")
-animation = &"Monster_easy5_2"
-
 [node name="TextInput_move" parent="." instance=ExtResource("10_ygc86")]
 offset_left = 96.0
 offset_top = 568.0
@@ -7368,9 +7300,6 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" parent="Player" index="0"]
 position = Vector2(3.05176e-05, 58)
 
-[node name="Timer" parent="Player" index="4"]
-wait_time = 0.518
-
 [node name="HUD" parent="." instance=ExtResource("12_xcagy")]
 
 [node name="Button" type="Button" parent="."]
@@ -7380,7 +7309,7 @@ offset_right = 1024.0
 offset_bottom = 76.0
 
 [node name="Coin5" parent="." instance=ExtResource("13_rspht")]
-position = Vector2(799, 379)
+position = Vector2(804, 387)
 
 [node name="Coin4" parent="." instance=ExtResource("13_rspht")]
 position = Vector2(480, 506)
@@ -7389,7 +7318,27 @@ position = Vector2(480, 506)
 visible = false
 z_index = 10
 
+[node name="Fasttyping" parent="pauseMenu" instance=ExtResource("12_yj7o8")]
+z_index = 30
+script = ExtResource("13_vnkg3")
+
+[node name="Enemy" parent="pauseMenu/Fasttyping/mainBG" index="0"]
+script = ExtResource("14_utgsr")
+
+[node name="Player" parent="pauseMenu/Fasttyping/mainBG" index="1"]
+script = null
+
+[node name="Monster5_1" parent="." instance=ExtResource("13_l3hos")]
+position = Vector2(678, 440)
+
+[connection signal="monster1Pause" from="." to="pauseMenu/Fasttyping" method="_on_easy_5_monster_1_pause"]
 [connection signal="text_submitted" from="TextInput_move" to="." method="_on_text_input_move_text_submitted"]
+[connection signal="exitMonsterD1" from="pauseMenu/Fasttyping" to="." method="_on_fasttyping_exit_monster_d_1"]
+[connection signal="hp_decrease_sig" from="pauseMenu/Fasttyping" to="HUD" method="_on_fasttyping_hp_decrease_sig"]
+[connection signal="body_entered" from="Monster5_1" to="." method="_on_monster_5_1_body_entered"]
+[connection signal="body_entered" from="Monster5_1" to="." method="_on_monster_4_1_body_entered"]
+[connection signal="body_entered" from="Monster5_1" to="pauseMenu/Fasttyping" method="_on_monster_5_1_body_entered"]
 
 [editable path="Player"]
 [editable path="pauseMenu"]
+[editable path="pauseMenu/Fasttyping"]

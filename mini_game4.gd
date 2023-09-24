@@ -75,10 +75,21 @@ func HPdecress():
 
 
 
-#func _on_easy_1_monster_1_pause():
-	
-
-
 func _on_easy_4_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_easy_3_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_easy_5_monster_1_pause():
+	promt.start()
+	timer.start()
+
+
+func _on_monster_5_1_body_entered(body):
 	promt.start()
 	timer.start()

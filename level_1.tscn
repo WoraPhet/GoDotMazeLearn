@@ -55,9 +55,6 @@ position = Vector2(9.68741, 56)
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
 
-[node name="Timer" parent="Player" index="3"]
-wait_time = 0.518
-
 [node name="Node" type="Node" parent="."]
 
 [connection signal="monster1Pause" from="Easy1" to="Easy1/pauseMenu/Fasttyping" method="_on_easy_1_monster_1_pause"]

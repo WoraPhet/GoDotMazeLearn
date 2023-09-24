@@ -8828,9 +8828,6 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" parent="Player" index="0"]
 position = Vector2(3.05176e-05, 58)
 
-[node name="Timer" parent="Player" index="4"]
-wait_time = 0.518
-
 [node name="HUD" parent="." instance=ExtResource("10_bufka")]
 
 [node name="Button" type="Button" parent="."]

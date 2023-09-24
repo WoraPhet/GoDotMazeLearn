@@ -7311,9 +7311,6 @@ position = Vector2(52.3119, 12)
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
 
-[node name="Timer" parent="Player" index="3"]
-wait_time = 0.518
-
 [node name="HUD" parent="." instance=ExtResource("3_a6wpn")]
 
 [node name="Button" type="Button" parent="."]
