@@ -57,6 +57,7 @@ class myDFA_L1:
 	
 	func _init():
 			# Set State Transitions
+						#U D L R
 		q0.setTransition(q0, q0, q0, q1)
 		q1.setTransition(q9, q2, q0, q1)
 		q2.setTransition(q1, q2, q2, q3)

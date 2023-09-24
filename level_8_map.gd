@@ -77,7 +77,7 @@ class myDFA_L1:
 		q4.setTransition(q4, q3, q4, q5_enemy)#
 		q5_enemy.setTransition(q5_enemy, q5_enemy, q4, q6_item)
 		q6_item.setTransition(q6_item, q7, q5_enemy, trap)
-		q7.setTransition(q6_item, trap, q7, q8)
+		q7.setTransition(q6_item, q7, q7, q8)
 		q8.setTransition(trap, q8, q7, q8)
 		q9.setTransition(q2, q10, q9, q9)
 		q10.setTransition(q9, q10, q10, q11)
