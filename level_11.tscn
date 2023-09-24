@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv5ram2suhbuq"]
+[gd_scene load_steps=12 format=3 uid="uid://cv5ram2suhbuq"]
 
 [ext_resource type="Texture2D" uid="uid://bm0xxuxh3oi37" path="res://TileSet/terrain-v7.png" id="1_xr257"]
 [ext_resource type="PackedScene" uid="uid://bvfdfy0qgn0ul" path="res://score_board.tscn" id="2_lmp2k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://curmfm2h1efkn" path="res://go_back_to_start_menu_btn.tscn" id="3_pp65l"]
 [ext_resource type="FontFile" uid="uid://b5sme0jamflem" path="res://Fonts/PlayMeGames-Demo.otf" id="4_ehipx"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="5_fcrtw"]
+[ext_resource type="Script" path="res://ScorePoint_final.gd" id="7_vf36a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ae8"]
 texture = ExtResource("1_xr257")
@@ -1472,6 +1473,7 @@ font_size = 80
 font_color = Color(1, 0.85098, 0.145098, 1)
 
 [node name="Winner" type="Node2D"]
+z_index = 51
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d5cbf")
@@ -1505,6 +1507,7 @@ label_settings = SubResource("LabelSettings_aj58r")
 horizontal_alignment = 1
 
 [node name="HUD" parent="." instance=ExtResource("5_fcrtw")]
+script = ExtResource("7_vf36a")
 
 [node name="Panel" parent="HUD" index="0"]
 offset_left = 508.0

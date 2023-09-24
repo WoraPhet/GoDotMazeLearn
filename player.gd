@@ -6,7 +6,6 @@ const PIXEL_SIZE = 64
 var can_walk = true
 #var timer = null
 #var step_delay = 2
-
 var dfa_queue = []
 
 #var accept_input_queue = []
@@ -54,7 +53,20 @@ func _physics_process(delta):
 				if(Global.hp_global > 100):
 					Global.hp_global = 100
 			Global.current_level += 1
-			get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
+			if (Global.current_level == 11):#win
+				var file = FileAccess.open("res://high-score.txt",FileAccess.READ_WRITE)
+				file.seek_end()
+				Global.score = (Global.score * 10) + GameTimeUI.sec
+				file.store_line(Global.nameSet + ":"+str(Global.score))
+				file.close()
+				Global.tempScore = Global.score
+				Global.score = 0
+				Global.score_minus = 0
+				get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
+				Global.current_level = 1
+			else:
+				get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
+			
 		elif char == "N":
 			#Global.score -= Global.score_minus
 			get_tree().change_scene_to_file("res://level_"+ str(Global.current_level) +".tscn")
@@ -66,8 +78,8 @@ func _physics_process(delta):
 		can_walk = false
 		$Timer.start()
 		
-func _on_Player_screen_notifier_2d_screen_exited():
-	get_tree().change_scene_to_file("res://level_"+ str(Global.current_level+1) +".tscn")
+#func _on_Player_screen_notifier_2d_screen_exited():
+#	get_tree().change_scene_to_file("res://level_"+ str(Global.current_level+1) +".tscn")
 
 
 

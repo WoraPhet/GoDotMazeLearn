@@ -21,7 +21,13 @@ func game_time():
 		$Timer.stop()
 		$timeStamp.hide()
 		#TODO Save score ลงไฟล์ด้วย
-		sec = startTime
+		var file = FileAccess.open("res://high-score.txt",FileAccess.READ_WRITE)
+		file.seek_end()
+		file.store_line(Global.nameSet + ":"+str(Global.score))
+		file.close()
+		Global.tempScore = Global.score
+		#sec = startTime
+		GameTimeUI.sec = 601
 		Global.score = 0
 		Global.score_minus = 0
 		#$timeStamp.visible = !$timeStamp.visible

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://duo78dps3sd4t"]
+[gd_scene load_steps=27 format=3 uid="uid://duo78dps3sd4t"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_ohk3g"]
 [ext_resource type="Texture2D" uid="uid://dd0udklexaxfv" path="res://BG/Background/Hell.png" id="2_1vah2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bx4edfbjtscwp" path="res://slime_f.png" id="4_58gef"]
 [ext_resource type="FontFile" uid="uid://vowstp25mcev" path="res://PlayMeGames Reguler.ttf" id="5_gktvx"]
 [ext_resource type="PackedScene" uid="uid://baw2coy5u4qld" path="res://ScorePoint.tscn" id="8_n07h6"]
+[ext_resource type="Script" path="res://ScorePoint_final.gd" id="9_euqvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s0xm4"]
 atlas = ExtResource("3_d7bgb")
@@ -188,6 +189,7 @@ offset_bottom = 472.0
 theme_override_fonts/font = ExtResource("5_gktvx")
 
 [node name="HUD" parent="." instance=ExtResource("8_n07h6")]
+script = ExtResource("9_euqvw")
 
 [node name="Panel" parent="HUD" index="0"]
 offset_left = 508.0
